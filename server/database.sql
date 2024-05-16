@@ -79,3 +79,11 @@ VALUES (
         'admin.pierre@admin.fr',
         true
     );
+
+CREATE TABLE `contact` (
+    `id` INT PRIMARY KEY AUTO_INCREMENT,
+    `firstname` VARCHAR(100) NOT NULL,
+    `lastname` VARCHAR(100) NOT NULL,
+    `email` VARCHAR(100),
+    `message` TEXT NOT NULL
+);
