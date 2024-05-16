@@ -18,15 +18,18 @@ $color-categorie: #ffffff;
   justify-content: center;
   margin-top: 1rem;
   margin-bottom: 2rem;
-  .titre-h1 {
-    font-family: "anthemia";
-    color: #517664;
-    font-size: 1.8rem;
-    font-weight: bolder;
-    font-weight: bold;
+  .ah1 {
+    text-decoration: none;
+    .titre-h1 {
+      font-family: "anthemia";
+      color: #517664;
+      font-size: 1.8rem;
+      font-weight: bolder;
+      font-weight: bold;
 
-    @media screen and (width >= 1000px) {
-      font-size: 5rem;
+      @media screen and (width >= 1000px) {
+        font-size: 5rem;
+      }
     }
   }
 }
