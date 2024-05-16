@@ -14,29 +14,31 @@ function Categorie() {
 
   return (
     <div>
-      <h2>{selectedCategory.name}</h2>
-      <Link to={selectedCategory.path}>
+      <div className="container-title">
         <img
           className="categorie-img"
           src={selectedCategory.img}
           alt={selectedCategory.name}
         />
-      </Link>
-      {selectedCategory.sousCategorie &&
-        selectedCategory.sousCategorie.map((perso) => (
-          <Link
-            to={`${selectedCategory.path}/${perso.name}`} // Path to the character
-            className="sous-categorie-container"
-            key={perso.name}
-          >
-            <img
-              className="sous-categorie-img"
-              src={perso.img}
-              alt={perso.name}
-            />
-            <h3>{perso.name}</h3>
-          </Link>
-        ))}
+        <h2 className="title-cat">{selectedCategory.name}</h2>
+      </div>
+      <div>
+        {selectedCategory.sousCategorie &&
+          selectedCategory.sousCategorie.map((perso) => (
+            <Link
+              to={`${selectedCategory.path}/${perso.name}`} // Chemin vers le personnage
+              className="sous-categorie-container"
+              key={perso.name}
+            >
+              <img
+                className="sous-categorie-img"
+                src={perso.img}
+                alt={perso.name}
+              />
+              <h3>{perso.name}</h3>
+            </Link>
+          ))}
+      </div>
     </div>
   );
 }
