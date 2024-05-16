@@ -1,5 +1,6 @@
 import { NavLink, Outlet } from "react-router-dom";
 import "./App.scss";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <div>
         <Outlet />
       </div>
+      <Footer />
     </>
   );
 }
