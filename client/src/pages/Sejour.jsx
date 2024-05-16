@@ -18,6 +18,7 @@ function Sejour() {
 
   const handleFilter = () => {
     setItemAleatoire(s);
+    console.info(itemAleatoire.name);
   };
 
   return (
@@ -55,9 +56,11 @@ function Sejour() {
             </Link>
           ))}
       </div>
-      <button className="button" type="button" onClick={() => handleFilter()}>
-        <p>{itemAleatoire.name}</p>
-      </button>
+      <Link to={`/categorie/${r.name}/${itemAleatoire.name}`}>
+        <button className="button" type="button" onClick={() => handleFilter()}>
+          <p>{itemAleatoire.name}</p>
+        </button>
+      </Link>
     </section>
   );
 }
