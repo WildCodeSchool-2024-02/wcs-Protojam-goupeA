@@ -4,7 +4,6 @@ namespace App\Model;
 
 use PDO;
 
-class IndexManager extends AbstractManager
+class HomeManager extends AbstractManager
 {
-    public const TABLE = 'user';
 }

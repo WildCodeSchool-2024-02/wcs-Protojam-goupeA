@@ -21,10 +21,10 @@ class ContactManager extends AbstractManager
         return (int)$this->pdo->lastInsertId();
     }
 
-    public function lastContactMessage()
+    public function contactMessage()
     {
-        $query = "SELECT * FROM " . static::TABLE . " ORDER BY id DESC LIMIT 1 ";
+        $query = "SELECT * FROM " . static::TABLE;
 
-        return $this->pdo->query($query)->fetch();
+        return $this->pdo->query($query)->fetchAll();
     }
 }
