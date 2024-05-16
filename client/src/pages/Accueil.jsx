@@ -3,7 +3,7 @@ import categories from "../data/categoriesData";
 
 function Acceuil() {
   return (
-    <div>
+    <div className="cards-container">
       {categories.map((categorie) => (
         <Link
           to={categorie.path}

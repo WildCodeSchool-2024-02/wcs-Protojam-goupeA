@@ -1,3 +1,14 @@
+@media screen and (width >= 1000px) {
+  .cards-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    .categorie-img {
+      width: 60vh;
+      height: 32vh;
+    }
+  }
+}
+
 .categorie-container {
   position: relative;
   display: flex;

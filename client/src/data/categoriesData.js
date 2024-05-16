@@ -1,4 +1,5 @@
 import foret from "../assets/categorie/vue-fascinante-foret-par-journee-ensoleillee-montanges-france.jpg";
+import aquatique from "../assets/categorie/underwater.jpg";
 import sf from "../assets/categorie/futuristic-moon-background.jpg";
 import montagne from "../assets/categorie/aiguille-verte-from-mont-blanc-massif-reflecting-water-chamonix-france.jpg";
 import cosmique from "../assets/categorie/lamp-design-with-fantasy-style.jpg";
@@ -13,6 +14,8 @@ import pape from "../assets/personnage/pape2.jpg";
 import durif from "../assets/personnage/sylvaindurif.jpg";
 import horn from "../assets/personnage/mikehorn.jpg";
 import denis from "../assets/personnage/denisbrogniart.jpg";
+import cousteau from "../assets/personnage/cousteau.jpg";
+import aquaman from "../assets/personnage/aquaman.jpg";
 
 const categories = [
   {
@@ -87,6 +90,21 @@ const categories = [
       {
         name: "Denis Brogniart",
         img: denis,
+      },
+    ],
+  },
+  {
+    name: "Aquatique",
+    img: aquatique,
+    path: "/categorie/aquatique",
+    sousCategorie: [
+      {
+        name: "Jacques-Yves Cousteau",
+        img: cousteau,
+      },
+      {
+        name: "Arthur aka Aquaman Curry",
+        img: aquaman,
       },
     ],
   },
