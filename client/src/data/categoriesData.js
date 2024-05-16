@@ -26,21 +26,61 @@ const categories = [
     name: "Science-Fiction",
     img: sf,
     path: "/categorie/science-fiction",
+    sousCategorie: [
+      {
+        name: "Yvan Kereun Appa",
+        img: yvan,
+      },
+      {
+        name: "Balou",
+        img: baloo,
+      },
+    ],
   },
   {
     name: "Montagne",
     img: montagne,
     path: "/categorie/montagne",
+    sousCategorie: [
+      {
+        name: "Yvan Kereun Appa",
+        img: yvan,
+      },
+      {
+        name: "Balou",
+        img: baloo,
+      },
+    ],
   },
   {
     name: "Cosmique",
     img: cosmique,
     path: "/categorie/cosmique",
+    sousCategorie: [
+      {
+        name: "Yvan Kereun Appa",
+        img: yvan,
+      },
+      {
+        name: "Balou",
+        img: baloo,
+      },
+    ],
   },
   {
     name: "Aventure",
     img: aventure,
     path: "/categorie/aventure",
+    sousCategorie: [
+      {
+        name: "Yvan Kereun Appa",
+        img: yvan,
+      },
+      {
+        name: "Balou",
+        img: baloo,
+      },
+    ],
   },
 ];
 
