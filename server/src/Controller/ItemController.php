@@ -16,4 +16,12 @@ class ItemController extends AbstractAPIController
 
         return json_encode(['items' => $items]);
     }
+
+    public function show(int $id): string
+    {
+        $itemManager = new ItemManager();
+        $item = $itemManager->selectOneById($id);
+
+        return json_encode(['item' => $item]);
+    }
 }

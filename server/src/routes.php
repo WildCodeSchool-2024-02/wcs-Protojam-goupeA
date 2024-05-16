@@ -13,4 +13,9 @@ return [
     'items/show' => ['ItemController', 'show', ['id']],
     'items/add' => ['ItemController', 'add',],
     'items/delete' => ['ItemController', 'delete',],
+    'journey' => ['JourneyController', 'index',],
+    'journey/edit' => ['JourneyController', 'edit', ['id']],
+    'journey/show' => ['JourneyController', 'show', ['id']],
+    'journey/show/book' => ['BookingController', 'insert', ['id']],
+    'bookings' => ['BookingController', 'booking',],
 ];
