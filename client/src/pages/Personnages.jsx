@@ -19,7 +19,17 @@ function Personnages() {
         <img src={perso[0].img} alt={perso[0].name} />
         <ul>
           <li>Nom du VIP: {perso[0].name}</li>
-          <li>Activites proposee: {perso[0].activity}</li>
+
+          <li>
+            Activités proposées:
+            {perso[0].activity.map((activity, index) => (
+              <span key={activity}>
+                {index > 0 ? ", " : ""}
+                {activity}
+              </span>
+            ))}
+          </li>
+
           <li>Condition(s): {perso[0].condition}</li>
           <li>Prix de l'aventure: {perso[0].price}.00€</li>
         </ul>
@@ -27,7 +37,7 @@ function Personnages() {
       <div className="divButton">
         <Link to={`/reservation/${perso[0].name}`}>
           <button type="button" className="button">
-            Reserver
+            Réserver
           </button>
         </Link>
       </div>
