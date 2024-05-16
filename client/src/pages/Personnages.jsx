@@ -11,6 +11,10 @@ const perso = [
 ];
 
 function Personnages() {
+  const goReservation = () => {
+    console.info("HI");
+  };
+
   return (
     <section className="perso">
       <h2 className="titlePerso">{perso[0].name}</h2>
@@ -24,7 +28,7 @@ function Personnages() {
         </ul>
       </div>
       <div className="divButton">
-        <button type="button" className="button">
+        <button type="button" className="button" onClick={goReservation}>
           Rreserver
         </button>
       </div>

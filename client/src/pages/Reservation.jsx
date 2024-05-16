@@ -19,7 +19,6 @@ function Reservation() {
   };
 
   const reservation = () => {
-    console.info("Has beem click");
     setShowPopup(true);
   };
 
