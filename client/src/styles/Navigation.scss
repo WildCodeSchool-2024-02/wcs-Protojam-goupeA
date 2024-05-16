@@ -1,0 +1,50 @@
+@font-face {
+  font-family: "anthemia";
+  src: url("./assets/font/anthemia/AnthemiaRegular.ttf");
+}
+@font-face {
+  font-family: "melinda_evania";
+  src: url("./assets/font/melinda_evania/MelindaEvania.ttf");
+}
+
+$color-bg: #d6e5e3;
+$color-title: #517664;
+$color-nav: #cacfd6;
+$color-textshadow: #77af9c;
+$color-categorie: #ffffff;
+
+.header-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  .titre-h1 {
+    font-family: "anthemia";
+    color: #517664;
+    font-size: 1.8rem;
+    font-weight: bolder;
+    font-weight: bold;
+
+    @media screen and (width >= 1000px) {
+      font-size: 5rem;
+    }
+  }
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  font-family: "anthemia";
+  @media screen and (width >= 900px) {
+  }
+  a {
+    text-decoration: none;
+    color: #cacfd6;
+    font-size: 2rem;
+
+    text-shadow: 2px 2px 1px $color-title;
+    font-weight: bold;
+  }
+}
