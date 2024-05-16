@@ -1,0 +1,26 @@
+@font-face {
+  font-family: "anthemia";
+  src: url("./assets/font/anthemia/AnthemiaRegular.ttf");
+}
+@font-face {
+  font-family: "melinda_evania";
+  src: url("./assets/font/melinda_evania/MelindaEvania.ttf");
+}
+@font-face {
+  font-family: "romelio";
+  src: url("./assets/font/romelio_sans/Romelio.ttf");
+}
+$color-bg: #d6e5e3;
+$color-title: #517664;
+$color-nav: #cacfd6;
+$color-textshadow: #77af9c;
+$color-categorie: #ffffff;
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $color-bg;
+}
