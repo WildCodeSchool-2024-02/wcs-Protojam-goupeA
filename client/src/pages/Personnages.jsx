@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import imgYvan from "../assets/personnage/Yvan_Kereun_Appa.jpg";
 
 const perso = [
@@ -11,10 +12,6 @@ const perso = [
 ];
 
 function Personnages() {
-  const goReservation = () => {
-    console.info("HI");
-  };
-
   return (
     <section className="perso">
       <h2 className="titlePerso">{perso[0].name}</h2>
@@ -28,9 +25,11 @@ function Personnages() {
         </ul>
       </div>
       <div className="divButton">
-        <button type="button" className="button" onClick={goReservation}>
-          Rreserver
-        </button>
+        <Link to="/reservation">
+          <button type="button" className="button">
+            Reserver
+          </button>
+        </Link>
       </div>
     </section>
   );
