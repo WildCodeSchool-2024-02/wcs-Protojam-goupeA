@@ -5,10 +5,33 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import App from "./App";
 
+import Acceuil from "./pages/Accueil";
+import Sejour from "./pages/Sejour";
+import Reservation from "./pages/Reservation";
+import Contact from "./pages/Contact";
+
 const router = createBrowserRouter([
   {
-    path: "/",
     element: <App />,
+    children: [
+      {
+        path: "/",
+        element: <Acceuil />,
+      },
+
+      {
+        path: "/sejour",
+        element: <Sejour />,
+      },
+      {
+        path: "/reservation",
+        element: <Reservation />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
+      },
+    ],
   },
 ]);
 
