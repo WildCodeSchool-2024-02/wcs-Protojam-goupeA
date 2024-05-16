@@ -7,6 +7,14 @@ use Symfony\Component\HttpClient\HttpClient;
 
 class UserController extends AbstractAPIController
 {
+    public function users(): string
+    {
+        $userManager = new UserManager();
+        $users = $userManager->getAllUser();
+
+        return json_encode(['users' => $users]);
+    }
+
     public function login()
     {
         $errors = [];

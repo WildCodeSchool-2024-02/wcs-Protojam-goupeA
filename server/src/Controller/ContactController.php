@@ -21,13 +21,12 @@ class ContactController extends AbstractAPIController
 
             return json_encode($contact);
         }
-
-        return $this->twig->render('Contact/contact.html.twig');
     }
+
     public function show()
     {
         $contactManager = new ContactManager();
-        $contact = $contactManager->lastContactMessage();
+        $contact = $contactManager->contactMessage();
 
         return json_encode(['contact' => $contact]);
     }

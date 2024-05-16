@@ -45,4 +45,12 @@ class UserManager extends AbstractManager
 
         return (int)$this->pdo->lastInsertId();
     }
+
+    public function getAllUser()
+    {
+        $statement = $this->pdo->prepare("SELECT * FROM " . self::TABLE);
+        $statement->execute();
+
+        return $statement->fetchAll();
+    }
 }
