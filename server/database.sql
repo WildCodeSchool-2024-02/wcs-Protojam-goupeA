@@ -126,40 +126,40 @@ CREATE TABLE IF NOT EXISTS `journey` (
 INSERT INTO
     `journey` (`name`, `description`, `type`)
 VALUES (
-        `Forêt`,
-        `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        'Forêt',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit,
    sed do eiusmod tempor incididunt ut labore et dolore magna 
    aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
    ullamco laboris nisi ut aliquip ex ea commodo consequat. 
    Duis aute irure dolor in reprehenderit in voluptate velit 
    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
    occaecat cupidatat non proident, sunt in culpa qui officia 
-   deserunt mollit anim id est laborum.`,
-        `Nature`
+   deserunt mollit anim id est laborum.',
+        'Nature'
     ),
     (
-        `Science-Fiction`,
-        `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        'Science-Fiction',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit,
    sed do eiusmod tempor incididunt ut labore et dolore magna 
    aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
    ullamco laboris nisi ut aliquip ex ea commodo consequat. 
    Duis aute irure dolor in reprehenderit in voluptate velit 
    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
    occaecat cupidatat non proident, sunt in culpa qui officia 
-   deserunt mollit anim id est laborum.`,
-        `SF`
+   deserunt mollit anim id est laborum.',
+        'SF'
     ),
     (
-        `Montagne`,
-        `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        'Montagne',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit,
    sed do eiusmod tempor incididunt ut labore et dolore magna 
    aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
    ullamco laboris nisi ut aliquip ex ea commodo consequat. 
    Duis aute irure dolor in reprehenderit in voluptate velit 
    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
    occaecat cupidatat non proident, sunt in culpa qui officia 
-   deserunt mollit anim id est laborum.`,
-        `Nature`
+   deserunt mollit anim id est laborum.',
+        'Nature'
     );
 
 CREATE TABLE IF NOT EXISTS `booking` (

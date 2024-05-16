@@ -3,8 +3,9 @@
 namespace App\Controller;
 
 use App\Model\ContactManager;
+use Symfony\Component\HttpClient\HttpClient;
 
-class ContactController extends AbstractController
+class ContactController extends AbstractAPIController
 {
     public function add()
     {
@@ -16,10 +17,9 @@ class ContactController extends AbstractController
 
             // if validation is ok, insert and redirection
             $contactManager = new ContactManager();
-            $contactManager->insert($datacontact);
+            $contact = $contactManager->insert($datacontact);
 
-            header('Location: /contact/show');
-            return null;
+            return json_encode($contact);
         }
 
         return $this->twig->render('Contact/contact.html.twig');
@@ -29,6 +29,6 @@ class ContactController extends AbstractController
         $contactManager = new ContactManager();
         $contact = $contactManager->lastContactMessage();
 
-        return $this->twig->render('Contact/show.html.twig', ['contact' => $contact]);
+        return json_encode(['contact' => $contact]);
     }
 }

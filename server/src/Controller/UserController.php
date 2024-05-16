@@ -3,8 +3,9 @@
 namespace App\Controller;
 
 use App\Model\UserManager;
+use Symfony\Component\HttpClient\HttpClient;
 
-class UserController extends AbstractController
+class UserController extends AbstractAPIController
 {
     public function login()
     {
@@ -25,7 +26,7 @@ class UserController extends AbstractController
                 exit();
             }
         }
-        return $this->twig->render('User/login.html.twig', ['errors' => $errors]);
+        return json_encode(['errors' => $errors]);
     }
 
     public function register()
@@ -52,7 +53,7 @@ class UserController extends AbstractController
                 return $this->login();
             }
         }
-        return $this->twig->render('User/register.html.twig', ['errors' => $errors]);
+        return json_encode(['errors' => $errors]);
     }
 
     public function logout()
