@@ -5,6 +5,14 @@ import cosmique from "../assets/categorie/lamp-design-with-fantasy-style.jpg";
 import aventure from "../assets/categorie/hiker-going-up-aiguille-du-midi.jpg";
 import yvan from "../assets/personnage/Yvan_Kereun_Appa.jpg";
 import baloo from "../assets/personnage/Baloo.png";
+import vador from "../assets/personnage/darkvador.jpg";
+import ellen from "../assets/personnage/ellenripley.webp";
+import gollum from "../assets/personnage/gollum.jpg";
+import hojac from "../assets/personnage/hojac.jpg";
+import pape from "../assets/personnage/pape2.jpg";
+import durif from "../assets/personnage/sylvaindurif.jpg";
+import horn from "../assets/personnage/mikehorn.jpg";
+import denis from "../assets/personnage/denisbrogniart.jpg";
 
 const categories = [
   {
@@ -28,12 +36,12 @@ const categories = [
     path: "/categorie/science-fiction",
     sousCategorie: [
       {
-        name: "Yvan Kereun Appa",
-        img: yvan,
+        name: "Dark Vador",
+        img: vador,
       },
       {
-        name: "Balou",
-        img: baloo,
+        name: "Ellen Ripley",
+        img: ellen,
       },
     ],
   },
@@ -43,12 +51,12 @@ const categories = [
     path: "/categorie/montagne",
     sousCategorie: [
       {
-        name: "Yvan Kereun Appa",
-        img: yvan,
+        name: "Gollum",
+        img: gollum,
       },
       {
-        name: "Balou",
-        img: baloo,
+        name: "Nicolas Hojac",
+        img: hojac,
       },
     ],
   },
@@ -58,12 +66,12 @@ const categories = [
     path: "/categorie/cosmique",
     sousCategorie: [
       {
-        name: "Yvan Kereun Appa",
-        img: yvan,
+        name: "Pape",
+        img: pape,
       },
       {
-        name: "Balou",
-        img: baloo,
+        name: "Sylvain Durif",
+        img: durif,
       },
     ],
   },
@@ -73,12 +81,12 @@ const categories = [
     path: "/categorie/aventure",
     sousCategorie: [
       {
-        name: "Yvan Kereun Appa",
-        img: yvan,
+        name: "Mike Horn",
+        img: horn,
       },
       {
-        name: "Balou",
-        img: baloo,
+        name: "Denis Brogniart",
+        img: denis,
       },
     ],
   },
