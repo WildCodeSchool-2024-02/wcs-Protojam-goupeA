@@ -1,6 +1,7 @@
 .container-title {
   text-align: center;
   margin: 20px;
+  position: relative;
 }
 
 .categorie-img {
@@ -22,7 +23,7 @@
   font-size: 3.5em;
   color: white;
   position: absolute;
-  top: 300px;
+  top: 200px;
   left: 50%;
   transform: translate(-50%, -50%);
   text-shadow:
@@ -46,7 +47,7 @@
   color: #cacfd6;
   font-size: 2rem;
   width: 400px;
-  height: auto;
+  height: 450px;
   margin: 20px auto;
   background-color: #000000;
   box-shadow:
@@ -54,14 +55,21 @@
     inset 4px 4px 15px 0px #000000,
     5px 5px 15px 5px black;
   border-radius: 20px;
+  padding: 10px;
+  margin: 50px;
+}
+.sous-categorie-container:hover {
+  background-color: whitesmoke;
+  color: #000000;
 }
 
 .sous-categorie-img {
-  width: 400px;
-  height: 400px;
+  width: 410px;
+  height: 410px;
   margin-bottom: 10px;
   border-radius: 20px;
   border: none;
+  background-color: #000000;
 }
 
 .carousel {
@@ -75,6 +83,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .slide {
@@ -105,11 +114,13 @@
 }
 
 .prev {
-  left: 150px;
+  left: 5%;
+  transform: translateY(-50%);
 }
 
 .next {
-  right: 150px;
+  right: 5%;
+  transform: translateY(-50%);
 }
 
 .next img,
