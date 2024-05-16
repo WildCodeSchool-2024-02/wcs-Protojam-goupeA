@@ -7,6 +7,7 @@ function Categorie() {
   const selectedCategory = categories.find(
     (categorie) => categorie.path === `/categorie/${categoryName}`
   );
+
   if (!selectedCategory) {
     return <div>Catégorie non trouvée</div>;
   }
@@ -20,12 +21,11 @@ function Categorie() {
           src={selectedCategory.img}
           alt={selectedCategory.name}
         />
-        <h3>{selectedCategory.name}</h3>
       </Link>
       {selectedCategory.sousCategorie &&
         selectedCategory.sousCategorie.map((perso) => (
           <Link
-            to={perso.path}
+            to={`${selectedCategory.path}/${perso.name}`} // Path to the character
             className="sous-categorie-container"
             key={perso.name}
           >
