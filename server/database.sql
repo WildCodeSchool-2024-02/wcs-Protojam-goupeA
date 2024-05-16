@@ -1,3 +1,4 @@
+-- Active: 1713169810273@@127.0.0.1@3306@protojama
 -- phpMyAdmin SQL Dump
 -- version 4.5.4.1deb2ubuntu2
 -- http://www.phpmyadmin.net
@@ -44,17 +45,62 @@ VALUES (1, 'Stuff'),
     (2, 'Doodads');
 
 --
--- Index pour les tables exportées
---
-
---
 -- Index pour la table `item`
 --
 ALTER TABLE `item` ADD PRIMARY KEY (`id`);
 
---
--- AUTO_INCREMENT pour les tables exportées
---
+CREATE TABLE `user` (
+    `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    `firstname` VARCHAR(50) NOT NULL,
+    `lastname` VARCHAR(50) NOT NULL,
+    `password` VARCHAR(255) NOT NULL,
+    `email` VARCHAR(100) NOT NULL,
+    `is_admin` BOOL NULL
+);
+
+INSERT INTO
+    `user` (
+        `firstname`,
+        `lastname`,
+        `password`,
+        `email`,
+        `is_admin`
+    )
+VALUES (
+        'Matthieu',
+        'Helbert',
+        'admin',
+        'admin.matthieu@admin.fr',
+        true
+    ),
+    (
+        'Alex',
+        'Wenck',
+        'admin',
+        'admin.alex@admin.fr',
+        true
+    ),
+    (
+        'Sacha',
+        'Darras',
+        'admin',
+        'admin.sacha@admin.fr',
+        true
+    ),
+    (
+        'Fabien',
+        'Laquerriere',
+        'admin',
+        'admin.fabien@admin.fr',
+        true
+    ),
+    (
+        'Pierre',
+        'Delarocque',
+        'admin',
+        'admin.pierre@admin.fr',
+        true
+    );
 
 --
 -- AUTO_INCREMENT pour la table `item`
@@ -74,9 +120,47 @@ CREATE TABLE IF NOT EXISTS `journey` (
     `name` VARCHAR(255) NOT NULL,
     `description` TEXT(65535) NOT NULL,
     `type` VARCHAR(80) NOT NULL,
-    `personality` VARCHAR(80) NOT NULL,
     PRIMARY KEY (`id`)
 );
+
+INSERT INTO
+    `journey` (`name`, `description`, `type`)
+VALUES (
+        `Forêt`,
+        `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+   sed do eiusmod tempor incididunt ut labore et dolore magna 
+   aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+   ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+   Duis aute irure dolor in reprehenderit in voluptate velit 
+   esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
+   occaecat cupidatat non proident, sunt in culpa qui officia 
+   deserunt mollit anim id est laborum.`,
+        `Nature`
+    ),
+    (
+        `Science-Fiction`,
+        `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+   sed do eiusmod tempor incididunt ut labore et dolore magna 
+   aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+   ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+   Duis aute irure dolor in reprehenderit in voluptate velit 
+   esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
+   occaecat cupidatat non proident, sunt in culpa qui officia 
+   deserunt mollit anim id est laborum.`,
+        `SF`
+    ),
+    (
+        `Montagne`,
+        `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+   sed do eiusmod tempor incididunt ut labore et dolore magna 
+   aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+   ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+   Duis aute irure dolor in reprehenderit in voluptate velit 
+   esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
+   occaecat cupidatat non proident, sunt in culpa qui officia 
+   deserunt mollit anim id est laborum.`,
+        `Nature`
+    );
 
 CREATE TABLE IF NOT EXISTS `booking` (
     `id` INT NOT NULL AUTO_INCREMENT,
@@ -106,3 +190,11 @@ ADD CONSTRAINT fk_booking_journey FOREIGN KEY (journey_id) REFERENCES journey (i
 
 ALTER TABLE service
 ADD CONSTRAINT fk_service_booking FOREIGN KEY (booking_id) REFERENCES booking (id);
+
+CREATE TABLE `contact` (
+    `id` INT PRIMARY KEY AUTO_INCREMENT,
+    `firstname` VARCHAR(100) NOT NULL,
+    `lastname` VARCHAR(100) NOT NULL,
+    `email` VARCHAR(100),
+    `message` TEXT NOT NULL
+);
