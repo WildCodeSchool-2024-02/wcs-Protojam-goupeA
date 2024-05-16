@@ -40,7 +40,7 @@ function Contact() {
   return (
     <div>
       <section className="backgroundimage" id="backgroundimage">
-        <h1 className="titleform">Laisser un commentaire</h1>
+        <h2 className="titleform">Laisser un commentaire</h2>
       </section>
 
       <form onSubmit={(event) => event.preventDefault()}>
