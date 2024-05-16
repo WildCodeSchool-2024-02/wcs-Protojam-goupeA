@@ -1,3 +1,4 @@
+-- Active: 1713169810273@@127.0.0.1@3306@protojama
 -- phpMyAdmin SQL Dump
 -- version 4.5.4.1deb2ubuntu2
 -- http://www.phpmyadmin.net
@@ -44,17 +45,62 @@ VALUES (1, 'Stuff'),
     (2, 'Doodads');
 
 --
--- Index pour les tables exportées
---
-
---
 -- Index pour la table `item`
 --
 ALTER TABLE `item` ADD PRIMARY KEY (`id`);
 
---
--- AUTO_INCREMENT pour les tables exportées
---
+CREATE TABLE `user` (
+    `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    `firstname` VARCHAR(50) NOT NULL,
+    `lastname` VARCHAR(50) NOT NULL,
+    `password` VARCHAR(255) NOT NULL,
+    `email` VARCHAR(100) NOT NULL,
+    `is_admin` BOOL NULL
+);
+
+INSERT INTO
+    `user` (
+        `firstname`,
+        `lastname`,
+        `password`,
+        `email`,
+        `is_admin`
+    )
+VALUES (
+        'Matthieu',
+        'Helbert',
+        'admin',
+        'admin.matthieu@admin.fr',
+        true
+    ),
+    (
+        'Alex',
+        'Wenck',
+        'admin',
+        'admin.alex@admin.fr',
+        true
+    ),
+    (
+        'Sacha',
+        'Darras',
+        'admin',
+        'admin.sacha@admin.fr',
+        true
+    ),
+    (
+        'Fabien',
+        'Laquerriere',
+        'admin',
+        'admin.fabien@admin.fr',
+        true
+    ),
+    (
+        'Pierre',
+        'Delarocque',
+        'admin',
+        'admin.pierre@admin.fr',
+        true
+    );
 
 --
 -- AUTO_INCREMENT pour la table `item`
@@ -144,3 +190,11 @@ ADD CONSTRAINT fk_booking_journey FOREIGN KEY (journey_id) REFERENCES journey (i
 
 ALTER TABLE service
 ADD CONSTRAINT fk_service_booking FOREIGN KEY (booking_id) REFERENCES booking (id);
+
+CREATE TABLE `contact` (
+    `id` INT PRIMARY KEY AUTO_INCREMENT,
+    `firstname` VARCHAR(100) NOT NULL,
+    `lastname` VARCHAR(100) NOT NULL,
+    `email` VARCHAR(100),
+    `message` TEXT NOT NULL
+);

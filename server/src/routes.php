@@ -18,4 +18,10 @@ return [
     'journey/show' => ['JourneyController', 'show', ['id']],
     'journey/show/book' => ['BookingController', 'insert', ['id']],
     'bookings' => ['BookingController', 'booking',],
+    'register' => ['UserController', 'register',],
+    'login' => ['UserController', 'login',],
+    'logout' => ['UserController', 'logout',],
+    'contact' => ['ContactController', 'add'],
+    'contact/show' => ['ContactController', 'show', ['id']],
+    'user/delete' => ['UserController' , 'delete', ['id']],
 ];
