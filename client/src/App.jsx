@@ -11,7 +11,6 @@ function App() {
       <nav>
         <NavLink to="/">Acceuil</NavLink>
         <NavLink to="/sejour">Nos échappées</NavLink>
-        <NavLink to="/reservation">Réservation</NavLink>
         <NavLink to="/contact">Contact</NavLink>
       </nav>
       <main>
