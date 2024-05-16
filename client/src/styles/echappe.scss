@@ -1,13 +1,23 @@
-@media screen and (width >= 1000px) {
-  .category-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    .img-container {
-      width: 50vh;
-      height: 50vh;
-      border-radius: 20px;
-    }
+@font-face {
+  font-family: "anthemia";
+  src: url("./assets/font/anthemia/AnthemiaRegular.ttf");
+}
+
+@font-face {
+  font-family: "melinda_evania";
+  src: url("./assets/font/melinda_evania/MelindaEvania.ttf");
+}
+
+.category-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  .img-container {
+    width: 300px;
+    height: 200px;
+    border-radius: 20px;
   }
+
   .echappe-container {
     display: flex;
     flex-direction: column-reverse;
@@ -17,8 +27,8 @@
     text-decoration: none;
     color: #cacfd6;
     font-size: 2rem;
-    width: 465px;
-    height: auto;
+    width: 310px;
+    height: 250px;
     margin: 20px auto;
     background-color: #000000;
     box-shadow:
@@ -26,38 +36,17 @@
       inset 4px 4px 15px 0px #000000,
       5px 5px 15px 5px black;
     border-radius: 20px;
+    cursor: pointer;
+    font-family: "anthemia";
   }
 }
-
+.echappe-container:hover {
+  background-color: white;
+  color: #000000;
+}
 .category-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-}
-
-.img-container {
-  width: 50vh;
-  height: 50vh;
-  border-radius: 20px;
-}
-
-.echappe-container {
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  text-decoration: none;
-  color: #cacfd6;
-  font-size: 2rem;
-  width: 465px;
-  height: auto;
-  margin: 20px auto;
-  background-color: #000000;
-  box-shadow:
-    5px 5px 5px 0px #000000,
-    inset 4px 4px 15px 0px #000000,
-    5px 5px 15px 5px black;
-  border-radius: 20px;
 }
 
 .titre-echappe {
@@ -74,13 +63,29 @@
   line-height: 0.75;
 }
 
-.bloc {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 1rem 0 1rem 0;
+@media screen and (max-width: 999px) {
+  .category-container {
+    grid-template-columns: 1fr;
+  }
+
+  .echappe-container {
+    width: 100%;
+    height: auto;
+    margin: 10px auto;
+  }
+
+  .img-container {
+    width: 100%;
+    height: auto;
+  }
 }
 
+@media screen and (min-width: 1000px) {
+  .category-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
 /*Réinitilaisation de la liste déroulante*/
 select {
   appearance: none;
