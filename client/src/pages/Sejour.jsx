@@ -1,9 +1,32 @@
-import { useState } from "react";
+
+
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+
 import categories from "../data/categoriesData";
 
 function Sejour() {
   const [filterChoice, setFilterChoice] = useState("");
+
+  const choisirAleatoire = (tab) => {
+    const index = Math.floor(Math.random() * tab.length);
+
+    return tab[index];
+  };
+
+  const [itemAleatoire, setItemAleatoire] = useState([]);
+
+  const r = choisirAleatoire(categories);
+  const s = choisirAleatoire(r.sousCategorie);
+
+  const handleFilter = () => {
+    setItemAleatoire(s);
+    console.info(itemAleatoire.name);
+  };
+
+  useEffect(() => {
+    handleFilter();
+  }, []);
 
   return (
     <section>
@@ -24,8 +47,9 @@ function Sejour() {
             (categorie) => categorie.name === filterChoice || !filterChoice
           )
           .map((categorie) => (
-            <div key={categorie.id}>
+            <Link to={categorie.path} key={categorie.id}>
               <div className="sousCategorie-container">
+
                 {categorie.sousCategorie.map((sousCat) => (
                   <div className="echappe-container" key={sousCat.id}>
                     <Link
@@ -39,12 +63,19 @@ function Sejour() {
                         alt={sousCat.name}
                       />
                     </Link>
+
+              
                   </div>
                 ))}
               </div>
-            </div>
+            </Link>
           ))}
       </div>
+      <Link to={`/categorie/${r.name}/${itemAleatoire.name}`}>
+        <button className="button" type="button" onClick={() => handleFilter()}>
+          <p>Random choice</p>
+        </button>
+      </Link>
     </section>
   );
 }

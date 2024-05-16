@@ -21,34 +21,6 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */
 ;
 
---
--- Base de données :  `simple-mvc`
---
--- --------------------------------------------------------
-
---
--- Structure de la table `item`
---
-
-CREATE TABLE IF NOT EXISTS `item` (
-    `id` int(11) UNSIGNED NOT NULL,
-    `title` varchar(255) NOT NULL
-) ENGINE = InnoDB DEFAULT CHARSET = latin1;
-
---
--- Contenu de la table `item`
---
-
-INSERT INTO
-    `item` (`id`, `title`)
-VALUES (1, 'Stuff'),
-    (2, 'Doodads');
-
---
--- Index pour la table `item`
---
-ALTER TABLE `item` ADD PRIMARY KEY (`id`);
-
 CREATE TABLE `user` (
     `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     `firstname` VARCHAR(50) NOT NULL,
@@ -102,12 +74,6 @@ VALUES (
         true
     );
 
---
--- AUTO_INCREMENT pour la table `item`
---
-ALTER TABLE `item`
-MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
-AUTO_INCREMENT = 3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */
 ;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */
@@ -126,40 +92,40 @@ CREATE TABLE IF NOT EXISTS `journey` (
 INSERT INTO
     `journey` (`name`, `description`, `type`)
 VALUES (
-        `Forêt`,
-        `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        'Forêt',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit,
    sed do eiusmod tempor incididunt ut labore et dolore magna 
    aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
    ullamco laboris nisi ut aliquip ex ea commodo consequat. 
    Duis aute irure dolor in reprehenderit in voluptate velit 
    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
    occaecat cupidatat non proident, sunt in culpa qui officia 
-   deserunt mollit anim id est laborum.`,
-        `Nature`
+   deserunt mollit anim id est laborum.',
+        'Nature'
     ),
     (
-        `Science-Fiction`,
-        `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        'Science-Fiction',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit,
    sed do eiusmod tempor incididunt ut labore et dolore magna 
    aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
    ullamco laboris nisi ut aliquip ex ea commodo consequat. 
    Duis aute irure dolor in reprehenderit in voluptate velit 
    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
    occaecat cupidatat non proident, sunt in culpa qui officia 
-   deserunt mollit anim id est laborum.`,
-        `SF`
+   deserunt mollit anim id est laborum.',
+        'SF'
     ),
     (
-        `Montagne`,
-        `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        'Montagne',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit,
    sed do eiusmod tempor incididunt ut labore et dolore magna 
    aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
    ullamco laboris nisi ut aliquip ex ea commodo consequat. 
    Duis aute irure dolor in reprehenderit in voluptate velit 
    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
    occaecat cupidatat non proident, sunt in culpa qui officia 
-   deserunt mollit anim id est laborum.`,
-        `Nature`
+   deserunt mollit anim id est laborum.',
+        'Nature'
     );
 
 CREATE TABLE IF NOT EXISTS `booking` (

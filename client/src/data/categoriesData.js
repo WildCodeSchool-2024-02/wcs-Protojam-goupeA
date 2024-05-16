@@ -20,6 +20,7 @@ import aquaman from "../assets/personnage/aquaman.jpg";
 const categories = [
   {
     name: "Forêt",
+    id: "1",
     img: foret,
     path: "/categorie/foret",
     sousCategorie: [
@@ -41,6 +42,7 @@ const categories = [
   },
   {
     name: "Science-Fiction",
+    id: "2",
     img: sf,
     path: "/categorie/science-fiction",
     sousCategorie: [
@@ -62,6 +64,7 @@ const categories = [
   },
   {
     name: "Montagne",
+    id: "3",
     img: montagne,
     path: "/categorie/montagne",
     sousCategorie: [
@@ -83,6 +86,7 @@ const categories = [
   },
   {
     name: "Cosmique",
+    id: "4",
     img: cosmique,
     path: "/categorie/cosmique",
     sousCategorie: [
@@ -104,6 +108,7 @@ const categories = [
   },
   {
     name: "Aventure",
+    id: "5",
     img: aventure,
     path: "/categorie/aventure",
     sousCategorie: [
@@ -125,6 +130,7 @@ const categories = [
   },
   {
     name: "Aquatique",
+    id: "6",
     img: aquatique,
     path: "/categorie/aquatique",
     sousCategorie: [
