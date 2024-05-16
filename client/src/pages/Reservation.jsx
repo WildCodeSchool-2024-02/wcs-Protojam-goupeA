@@ -16,7 +16,7 @@ function Reservation() {
   };
 
   return (
-    <section>
+    <section className="resa-container">
       <h2>Confirmation reservation {bidon[0].vip}</h2>
       <p>
         Vous souhaitez reserver le voyage avec {bidon[0].vip} afin de profiter
