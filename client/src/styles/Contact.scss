@@ -64,9 +64,9 @@ form {
   right: 10%;
   margin: 1rem;
   padding: 1rem;
-  background-color: white;
+  background-color: $color-title;
   border: 3px solid $color-title;
-  border-radius: 40px 0 40px 0;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -88,11 +88,10 @@ form {
   .closePopup {
     width: 10rem;
     height: 2rem;
-    border-radius: 20px 0 20px 0;
-    background-color: skyblue;
-    color: black;
+    border-radius: 20px;
+    background-color: color;
+    color: $color-title;
     font-size: 1.1rem;
-    border: 2px solid $color-title;
   }
 }
 .Popup {
@@ -100,6 +99,7 @@ form {
     font-size: 1.2rem;
     margin-top: 0;
     margin-bottom: 1rem;
+    color: $color-nav;
   }
 }
 
