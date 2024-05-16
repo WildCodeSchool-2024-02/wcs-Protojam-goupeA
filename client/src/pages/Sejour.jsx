@@ -4,22 +4,22 @@ import categories from "../data/categoriesData";
 
 function Sejour() {
   const [filterChoice, setFilterChoice] = useState("");
-  console.info("PATATE ", categories[0].sousCategorie.length);
 
-  // Créons une fonction pour choisir un élément aléatoire
   const choisirAleatoire = (tab) => {
     const index = Math.floor(Math.random() * tab.length);
-    // console.info("tab entier: ", tab);
-    console.info("tab index", tab[index]);
+
     return tab[index];
   };
 
-  // Utilisons le Hook d'état pour stocker l'élément aléatoire
   const [itemAleatoire, setItemAleatoire] = useState([]);
 
   const r = choisirAleatoire(categories);
-  console.info("r.sousC ", r.sousCategorie);
   const s = choisirAleatoire(r.sousCategorie);
+
+  const handleFilter = () => {
+    setItemAleatoire(s);
+    console.info(itemAleatoire.name);
+  };
 
   return (
     <section>
@@ -56,13 +56,11 @@ function Sejour() {
             </Link>
           ))}
       </div>
-      <button
-        className="button"
-        type="button"
-        onClick={() => setItemAleatoire(s)}
-      >
-        {itemAleatoire && <p>{itemAleatoire.name}</p>}
-      </button>
+      <Link to={`/categorie/${r.name}/${itemAleatoire.name}`}>
+        <button className="button" type="button" onClick={() => handleFilter()}>
+          <p>{itemAleatoire.name}</p>
+        </button>
+      </Link>
     </section>
   );
 }
