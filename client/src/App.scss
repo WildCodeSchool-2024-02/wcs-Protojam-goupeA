@@ -1,3 +1,4 @@
+@import "./styles/Navigation.scss";
 @font-face {
   font-family: "anthemia";
   src: url("./assets/font/anthemia/AnthemiaRegular.ttf");
@@ -10,6 +11,7 @@
   font-family: "romelio";
   src: url("./assets/font/romelio_sans/Romelio.ttf");
 }
+
 $color-bg: #d6e5e3;
 $color-title: #517664;
 $color-nav: #cacfd6;
