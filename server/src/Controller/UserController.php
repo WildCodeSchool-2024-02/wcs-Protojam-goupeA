@@ -62,31 +62,6 @@ class UserController extends AbstractController
         exit();
     }
 
-    // public function resetpassword()
-    // {
-    //     if ((!$this->user )) {
-    //         echo 'Accès non autorisé';
-    //         header('Location: /error');
-    //     }
-    //     $errors = [];
-    //     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    //         $userdata = array_map('trim', $_POST);
-
-    //         if (filter_var($userdata['email'], FILTER_VALIDATE_EMAIL) === false) {
-    //             $errors[] = 'veuillez entrez un email';
-    //         }
-    //         if (empty($userdata['password'])) {
-    //             $errors[] = 'veuillez entrez un mot de passe';
-    //         }
-    //         if (empty($errors)) {
-    //             $userManager = new UserManager();
-    //             $userManager->updateUser($userdata);
-    //             header('location: /compte');
-    //         }
-    //     }
-    //     return $this->twig->render('User/compte.html.twig', ['errors' => $errors]);
-    // }
-
     public function delete(int $id): void
     {
         $userManager = new UserManager();
