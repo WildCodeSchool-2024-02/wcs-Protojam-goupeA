@@ -57,7 +57,7 @@ function Sejour() {
                         className="img-container"
                         src={sousCat.img}
                         alt={sousCat.name}
-                      />{" "}
+                      />
                       <h3>{sousCat.name}</h3>
                     </Link>
                   </div>
