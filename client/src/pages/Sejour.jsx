@@ -1,13 +1,44 @@
+import { useState } from "react";
+import categories from "../data/categoriesData";
+
 function Sejour() {
+  const [filterChoice, setFilterChoice] = useState("");
+
   return (
     <section>
-      <h1>Hello Toto2</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
-        esse blanditiis doloribus repellat harum nesciunt rerum nobis non minus
-        similique earum incidunt alias facilis nam error eaque, repudiandae,
-        odit quis!
-      </p>
+      <h1 className="titre-echappe">Nos Échappée</h1>
+      <div className="bloc">
+        <div className="select">
+          <select onChange={(e) => setFilterChoice(e.target.value)}>
+            <option value="">All</option>
+            {categories.map((categ) => (
+              <option key={categ.id}>{categ.name}</option>
+            ))}
+          </select>
+        </div>
+      </div>
+      <div className="category-container">
+        {categories
+          .filter(
+            (categorie) => categorie.name === filterChoice || !filterChoice
+          )
+          .map((categorie) => (
+            <div key={categorie.id}>
+              <div className="sousCategorie-container">
+                {categorie.sousCategorie.map((sousCat, index) => (
+                  <div className="echappe-container" key={index}>
+                    <h3>{sousCat.name}</h3>
+                    <img
+                      className="img-container"
+                      src={sousCat.img}
+                      alt={sousCat.name}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+      </div>
     </section>
   );
 }
