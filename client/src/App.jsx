@@ -13,9 +13,9 @@ function App() {
         <NavLink to="/reservation">Réservation</NavLink>
         <NavLink to="/contact">Contact</NavLink>
       </nav>
-      <div>
+      <main>
         <Outlet />
-      </div>
+      </main>
     </>
   );
 }
