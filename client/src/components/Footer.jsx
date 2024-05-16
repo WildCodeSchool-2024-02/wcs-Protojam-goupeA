@@ -1,14 +1,23 @@
 import teamTab from "../data/teamData";
+import logoGithub from "../assets/images/github.svg";
 
 function Footer() {
   return (
     <footer>
       {teamTab.map((person) => (
         <section key={person.name} className={person.firstName}>
-          <ul>
+          <ul className="footerUl">
             <li>{person.name}</li>
             <li>{person.firstName}</li>
-            <li>{person.gitHub}</li>
+            <li>
+              <a href={person.gitHub}>
+                <img
+                  className="logoGithub"
+                  src={logoGithub}
+                  alt="logo github"
+                />
+              </a>
+            </li>
           </ul>
         </section>
       ))}

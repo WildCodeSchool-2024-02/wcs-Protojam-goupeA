@@ -1,0 +1,31 @@
+@font-face {
+  font-family: "anthemia";
+  src: url("./assets/font/anthemia/AnthemiaRegular.ttf");
+}
+@font-face {
+  font-family: "melinda_evania";
+  src: url("./assets/font/melinda_evania/MelindaEvania.ttf");
+}
+
+.logoGithub {
+  width: 1.5vw;
+  height: auto;
+}
+
+footer {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px 0;
+}
+
+.footerUl {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  padding: 0;
+  gap: 5px;
+  li {
+    display: flex;
+    margin: 0;
+  }
+}
