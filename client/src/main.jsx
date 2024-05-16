@@ -25,10 +25,6 @@ const router = createBrowserRouter([
         element: <Sejour />,
       },
       {
-        path: "/reservation",
-        element: <Reservation />,
-      },
-      {
         path: "/contact",
         element: <Contact />,
       },
@@ -39,6 +35,18 @@ const router = createBrowserRouter([
       {
         path: "/categorie/:categoryName/:persoName",
         element: <Personnage />,
+      },
+      {
+        path: "/reservation/:name",
+        element: <Reservation />,
+        loader: async ({ params }) => {
+          const { name } = params;
+          try {
+            return fetch(`http://localhost:3000/reservation/${name}`);
+          } catch (error) {
+            return error;
+          }
+        },
       },
     ],
   },
