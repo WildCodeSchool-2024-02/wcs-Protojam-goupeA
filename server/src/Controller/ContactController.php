@@ -19,7 +19,16 @@ class ContactController extends AbstractAPIController
             $contactManager = new ContactManager();
             $contact = $contactManager->insert($datacontact);
 
-            return json_encode($contact);
+            $client = HttpClient::create();
+            $response = $client->request(
+                'GET',
+                'https://echappee-celebrement-fantasque.netlify.app/contact'
+            );
+
+            $content = $response->getContent();
+            $content = $response->toArray();
+
+            return json_encode(['contact' => $contact, 'content' => $content]);
         }
     }
 
