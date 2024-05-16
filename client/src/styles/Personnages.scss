@@ -1,0 +1,38 @@
+@font-face {
+  font-family: "anthemia";
+  src: url("./assets/font/anthemia/AnthemiaRegular.ttf");
+}
+
+@font-face {
+  font-family: "melinda_evania";
+  src: url("./assets/font/melinda_evania/MelindaEvania.ttf");
+}
+
+.perso {
+  display: flex;
+  flex-direction: column;
+  .titlePerso {
+    display: flex;
+    justify-content: space-evenly;
+    font-family: "anthemia";
+  }
+  .divPerso {
+    display: flex;
+    img {
+      width: 25vw;
+      height: auto;
+      margin: 15px;
+    }
+    ul {
+      margin: 15px;
+      li {
+        list-style: none;
+        font-family: "melinda_evania";
+      }
+    }
+  }
+  .divButton {
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
