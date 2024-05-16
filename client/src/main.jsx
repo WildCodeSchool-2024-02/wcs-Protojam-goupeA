@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Routes } from "react-router-dom";
 
 import App from "./App";
 
@@ -10,6 +10,7 @@ import Sejour from "./pages/Sejour";
 import Reservation from "./pages/Reservation";
 import Contact from "./pages/Contact";
 import Categorie from "./pages/Categorie";
+import Personnage from "./pages/Personnages";
 
 const router = createBrowserRouter([
   {
@@ -31,10 +32,13 @@ const router = createBrowserRouter([
         path: "/contact",
         element: <Contact />,
       },
-
       {
-        path: "/categorie/:id",
+        path: "/categorie/:categoryName",
         element: <Categorie />,
+      },
+      {
+        path: "/categorie/:categoryName/:persoName",
+        element: <Personnage />,
       },
     ],
   },
@@ -44,6 +48,8 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <RouterProvider router={router}>
+      <Routes />
+    </RouterProvider>
   </React.StrictMode>
 );
