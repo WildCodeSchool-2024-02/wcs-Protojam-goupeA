@@ -3,16 +3,20 @@ import categories from "../data/categoriesData";
 
 function Sejour() {
   const [filterChoice, setFilterChoice] = useState("");
-  console.log(filterChoice);
+
   return (
     <section>
-      <h1>Nos Échappée</h1>
-      <select onChange={(e) => setFilterChoice(e.target.value)}>
-        <option value="">All</option>
-        {categories.map((categ) => (
-          <option key={categ.id}>{categ.name}</option>
-        ))}
-      </select>
+      <h1 className="titre-echappe">Nos Échappée</h1>
+      <div className="bloc">
+        <div className="select">
+          <select onChange={(e) => setFilterChoice(e.target.value)}>
+            <option value="">All</option>
+            {categories.map((categ) => (
+              <option key={categ.id}>{categ.name}</option>
+            ))}
+          </select>
+        </div>
+      </div>
       <div className="category-container">
         {categories
           .filter(
