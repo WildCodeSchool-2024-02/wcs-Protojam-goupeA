@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import categories from "../data/categoriesData";
 
 function Sejour() {
@@ -20,6 +20,10 @@ function Sejour() {
     setItemAleatoire(s);
     console.info(itemAleatoire.name);
   };
+
+  useEffect(() => {
+    handleFilter();
+  }, []);
 
   return (
     <section>
@@ -58,7 +62,7 @@ function Sejour() {
       </div>
       <Link to={`/categorie/${r.name}/${itemAleatoire.name}`}>
         <button className="button" type="button" onClick={() => handleFilter()}>
-          <p>{itemAleatoire.name}</p>
+          <p>Random choice</p>
         </button>
       </Link>
     </section>
