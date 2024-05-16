@@ -5,7 +5,9 @@ const perso = [
   {
     name: "Yvan",
     img: imgYvan,
-    activity: ["Mygales", "Faune & Flore", "Randonne"],
+    activity: "L'Appel de la Forêt de Kereun",
+    description:
+      "Rejoignez Yvan Kereun Appa dans une forêt où les arbres murmurent des secrets anciens et les animaux organisent des soirées dansantes. Marchez à travers des clairières enchantées et découvrez pourquoi les écureuils le considèrent comme leur gourou. Une aventure déjantée pour se déconnecter et rire aux éclats.",
     condition: "No fear",
     price: 150,
   },
@@ -19,7 +21,9 @@ function Personnages() {
         <img src={perso[0].img} alt={perso[0].name} />
         <ul>
           <li>Nom du VIP: {perso[0].name}</li>
+
           <li>Activites proposee: {perso[0].activity}</li>
+          <li>Activites proposee: {perso[0].description}</li>
           <li>Condition(s): {perso[0].condition}</li>
           <li>Prix de l'aventure: {perso[0].price}.00€</li>
         </ul>
