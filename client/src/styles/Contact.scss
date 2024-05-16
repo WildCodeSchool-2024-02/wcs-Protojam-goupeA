@@ -1,0 +1,151 @@
+@font-face {
+  font-family: "anthemia";
+  src: url("./assets/font/anthemia/AnthemiaRegular.ttf");
+}
+@font-face {
+  font-family: "melinda_evania";
+  src: url("./assets/font/melinda_evania/MelindaEvania.ttf");
+}
+@font-face {
+  font-family: "romelio";
+  src: url("./assets/font/romelio_sans/Romelio.ttf");
+}
+
+$color-bg: #d6e5e3;
+$color-title: #517664;
+$color-nav: #cacfd6;
+$color-textshadow: #77af9c;
+$color-categorie: #ffffff;
+
+.titleform {
+  display: flex;
+
+  justify-content: center;
+  margin-top: 5rem;
+  background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
+  background-size: cover;
+  color: #7e101000;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  text-transform: uppercase;
+  font-size: 2rem;
+  line-height: 0.75;
+}
+
+@media screen and (width >= 1000px) {
+  .titleform {
+    margin-top: 5rem;
+    font-size: 5rem;
+  }
+}
+
+form {
+  margin-top: 5rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media screen and (min-width: 767px) {
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+  @media screen and (min-width: 1009px) {
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+  border-radius: 40px 0 40px 0;
+}
+
+.popupContainer {
+  position: fixed;
+  bottom: 55%;
+  left: 10%;
+  right: 10%;
+  margin: 1rem;
+  padding: 1rem;
+  background-color: white;
+  border: 3px solid $color-title;
+  border-radius: 40px 0 40px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: justify;
+
+  @media screen and (min-width: 767px) {
+    left: 20%;
+    right: 20%;
+    bottom: 45%;
+  }
+
+  @media screen and (min-width: 1009px) {
+    left: 30%;
+    right: 30%;
+    bottom: 60%;
+    padding: 1.5rem;
+  }
+
+  .closePopup {
+    width: 10rem;
+    height: 2rem;
+    border-radius: 20px 0 20px 0;
+    background-color: skyblue;
+    color: black;
+    font-size: 1.1rem;
+    border: 2px solid $color-title;
+  }
+}
+.Popup {
+  p {
+    font-size: 1.2rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+}
+
+input {
+  width: 100%;
+  background-color: white;
+  border: none;
+  margin-bottom: 0.7rem;
+  height: 2rem;
+  border: 2px solid $color-title;
+  @media screen and (min-width: 767px) {
+    height: 3.5rem;
+    font-size: large;
+  }
+}
+textarea {
+  width: 100%;
+  font-family: Arial;
+  resize: none;
+  border: none;
+  border: 2px solid $color-title;
+  @media screen and (min-width: 767px) {
+    font-size: large;
+    height: 15rem;
+  }
+}
+.button {
+  margin-top: 2rem;
+  margin-bottom: 0;
+  background-color: $color-title;
+  border: 2px solid $color-textshadow;
+  width: 10rem;
+  height: 3rem;
+  color: white;
+
+  @media screen and (min-width: 767px) {
+    font-size: 1.2rem;
+    height: 5rem;
+    width: 15rem;
+  }
+}
+
+.button:hover {
+  color: black;
+}
+
+.textarea-container {
+  margin: 1rem;
+}
