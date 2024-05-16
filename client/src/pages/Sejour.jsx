@@ -32,12 +32,12 @@ function Sejour() {
                       to={`${categorie.path}/${sousCat.name}`}
                       className="sous-categorie-link"
                     >
-                      <h3>{sousCat.name}</h3>
                       <img
                         className="img-container"
                         src={sousCat.img}
                         alt={sousCat.name}
                       />
+                      <h3>{sousCat.name}</h3>
                     </Link>
                   </div>
                 ))}
