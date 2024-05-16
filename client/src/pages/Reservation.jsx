@@ -1,13 +1,53 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import Popup from "../components/Popup";
+
+const bidon = [
+  {
+    cat: "Foret",
+    vip: "Balou",
+    activity: "Accrobranche",
+    condition: "Joyeux",
+  },
+];
+
 function Reservation() {
+  const [showPopup, setShowPopup] = useState(false);
+
+  const togglePopupClose = () => {
+    setShowPopup(false);
+  };
+
+  const reservation = () => {
+    console.info("Has beem click");
+    setShowPopup(true);
+  };
+
   return (
     <section>
-      <h1>Hello Toto4</h1>
+      <h2>Reserver {bidon[0].cat}</h2>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
-        esse blanditiis doloribus repellat harum nesciunt rerum nobis non minus
-        similique earum incidunt alias facilis nam error eaque, repudiandae,
-        odit quis!
+        Vous souhaitez reserver le voyage avec {bidon[0].vip} afin de profiter
+        de l'activite {bidon[0].activity} !
       </p>
+      <p>Je consens aux conditions: {bidon[0].condition}</p>
+      <button type="submit" onClick={reservation}>
+        Reserver
+      </button>
+      {showPopup && (
+        <div className="popupContainer">
+          <Popup />
+          <Link to="/">
+            <button
+              className="closePopup"
+              type="submit"
+              onClick={togglePopupClose}
+            >
+              Confirmer
+            </button>
+          </Link>
+        </div>
+      )}
     </section>
   );
 }
