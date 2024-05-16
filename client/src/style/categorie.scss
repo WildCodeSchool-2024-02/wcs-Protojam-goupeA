@@ -23,7 +23,7 @@
   font-size: 3.5em;
   color: white;
   position: absolute;
-  top: 200px;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-shadow:
@@ -35,20 +35,16 @@
     0px 2px 0 #517664,
     -2px 0px 0 #517664,
     0px -2px 0 #517664;
+  z-index: 1;
 }
 
 .sous-categorie-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   text-align: center;
-  text-decoration: none;
   color: #cacfd6;
   font-size: 2rem;
   width: 400px;
-  height: 40px;
-  margin: 20px auto;
+  min-height: 410px;
+  margin: 20px auto 50px;
   background-color: #000000;
   box-shadow:
     5px 5px 5px 0px #000000,
@@ -56,19 +52,20 @@
     5px 5px 15px 5px black;
   border-radius: 20px;
   padding: 10px;
-  margin: 50px;
+  display: flex; /* Ajout */
+  flex-direction: column; /* Ajout */
+  justify-content: center; /* Ajout */
+  align-items: center; /* Ajout */
 }
+
 .sous-categorie-container:hover {
   background-color: whitesmoke;
   color: #000000;
 }
 
 .sous-categorie-img {
-  width: 410px;
-  height: 410px;
   margin-bottom: 10px;
   border-radius: 20px;
-  border: none;
   background-color: #000000;
 }
 
@@ -80,17 +77,12 @@
 
 .carousel-images {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
 }
 
 .slide {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   text-align: center;
 }
 
