@@ -18,14 +18,14 @@ function Personnages() {
       <div className="divPerso">
         <img src={perso[0].img} alt={perso[0].name} />
         <ul>
-          <li>{perso[0].name}</li>
-          <li>{perso[0].activity}</li>
-          <li>{perso[0].condition}</li>
-          <li>{perso[0].price}.00€</li>
+          <li>Nom du VIP: {perso[0].name}</li>
+          <li>Activites proposee: {perso[0].activity}</li>
+          <li>Condition(s): {perso[0].condition}</li>
+          <li>Prix de l'aventure: {perso[0].price}.00€</li>
         </ul>
       </div>
       <div className="divButton">
-        <Link to="/reservation">
+        <Link to={`/reservation/${perso[0].name}`}>
           <button type="button" className="button">
             Reserver
           </button>

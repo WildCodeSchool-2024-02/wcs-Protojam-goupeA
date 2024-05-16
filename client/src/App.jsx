@@ -6,7 +6,9 @@ function App() {
   return (
     <>
       <header className="header-container">
-        <h1 className="titre-h1">Échappée Célébrement Fantasque</h1>
+        <NavLink to="/" className="ah1">
+          <h1 className="titre-h1">Échappée Célébrement Fantasque</h1>
+        </NavLink>
       </header>
       <nav>
         <NavLink to="/">Acceuil</NavLink>

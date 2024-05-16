@@ -1,17 +1,10 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Popup from "../components/Popup";
 
-const bidon = [
-  {
-    cat: "Foret",
-    vip: "Balou",
-    activity: "Accrobranche",
-    condition: "Joyeux",
-  },
-];
-
 function Reservation() {
+  const bidon = useLoaderData();
+  console.info(bidon);
   const [showPopup, setShowPopup] = useState(false);
 
   const togglePopupClose = () => {
@@ -24,7 +17,7 @@ function Reservation() {
 
   return (
     <section>
-      <h2>Reserver {bidon[0].cat}</h2>
+      <h2>Confirmation reservation {bidon[0].vip}</h2>
       <p>
         Vous souhaitez reserver le voyage avec {bidon[0].vip} afin de profiter
         de l'activite {bidon[0].activity} !
