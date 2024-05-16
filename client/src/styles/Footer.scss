@@ -18,9 +18,11 @@
 footer {
   display: flex;
   justify-content: space-around;
-  margin: 10px 0;
+  margin: 10px 0 0 0;
   font-family: "anthemia";
   font-size: 2rem;
+  border-top: 1px solid $color-textshadow;
+  padding: 15px 0;
 }
 
 .footerUl {
