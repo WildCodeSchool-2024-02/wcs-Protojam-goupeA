@@ -56,6 +56,15 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-shadow:
+    2px 2px 0 #517664,
+    2px -2px 0 #517664,
+    -2px 2px 0 #517664,
+    -2px -2px 0 #517664,
+    2px 0px 0 #517664,
+    0px 2px 0 #517664,
+    -2px 0px 0 #517664,
+    0px -2px 0 #517664;
 }
 
 .sous-categorie-container:hover {
