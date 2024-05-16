@@ -52,10 +52,10 @@
     5px 5px 15px 5px black;
   border-radius: 20px;
   padding: 10px;
-  display: flex; /* Ajout */
-  flex-direction: column; /* Ajout */
-  justify-content: center; /* Ajout */
-  align-items: center; /* Ajout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .sous-categorie-container:hover {
