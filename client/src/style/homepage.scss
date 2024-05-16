@@ -1,0 +1,68 @@
+.categorie-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin: 20px;
+  cursor: pointer;
+}
+
+.categorie-container h2 {
+  font-family: "melinda_evania";
+  font-size: 2.5em;
+  color: white;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  text-shadow:
+    2px 2px 0 #517664,
+    2px -2px 0 #517664,
+    -2px 2px 0 #517664,
+    -2px -2px 0 #517664,
+    2px 0px 0 #517664,
+    0px 2px 0 #517664,
+    -2px 0px 0 #517664,
+    0px -2px 0 #517664;
+  transition:
+    color 0.3s,
+    text-shadow 0.3s;
+}
+
+.categorie-container:hover h2 {
+  color: #517664;
+  text-shadow:
+    2px 2px 0 white,
+    2px -2px 0 white,
+    -2px 2px 0 white,
+    -2px -2px 0 white,
+    2px 0px 0 white,
+    0px 2px 0 white,
+    -2px 0px 0 white,
+    0px -2px 0 white;
+}
+
+.categorie-img {
+  width: 450px;
+  height: 300px;
+  z-index: 0;
+  border-radius: 20px;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+  box-shadow:
+    5px 5px 5px 0px #000000,
+    inset 4px 4px 15px 0px #000000,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+
+.categorie-container:hover .categorie-img {
+  transform: scale(1.05);
+  box-shadow:
+    10px 10px 10px 0px #000000,
+    inset 8px 8px 20px 0px #000000,
+    10px 10px 20px 10px rgba(0, 0, 0, 0.2);
+}

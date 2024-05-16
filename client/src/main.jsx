@@ -9,6 +9,7 @@ import Acceuil from "./pages/Accueil";
 import Sejour from "./pages/Sejour";
 import Reservation from "./pages/Reservation";
 import Contact from "./pages/Contact";
+import Categorie from "./pages/Categorie";
 
 const router = createBrowserRouter([
   {
@@ -18,7 +19,6 @@ const router = createBrowserRouter([
         path: "/",
         element: <Acceuil />,
       },
-
       {
         path: "/sejour",
         element: <Sejour />,
@@ -30,6 +30,11 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />,
+      },
+
+      {
+        path: "/categorie/:id",
+        element: <Categorie />,
       },
     ],
   },
