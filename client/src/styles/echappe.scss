@@ -1,0 +1,10 @@
+@media screen and (width >= 1000px) {
+  .category-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    .img-container {
+      width: 50vh;
+      height: 50vh;
+    }
+  }
+}
