@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import categories from "../data/categoriesData";
 
@@ -39,7 +40,7 @@ function Sejour() {
             (categorie) => categorie.name === filterChoice || !filterChoice
           )
           .map((categorie) => (
-            <div key={categorie.id}>
+            <Link to={categorie.path} key={categorie.id}>
               <div className="sousCategorie-container">
                 {categorie.sousCategorie.map((sousCat, index) => (
                   <div className="echappe-container" key={index.id}>
@@ -52,7 +53,7 @@ function Sejour() {
                   </div>
                 ))}
               </div>
-            </div>
+            </Link>
           ))}
       </div>
       <button
