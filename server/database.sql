@@ -84,17 +84,42 @@ VALUES (
 CREATE TABLE IF NOT EXISTS `journey` (
     `id` INT NOT NULL AUTO_INCREMENT,
     `name` VARCHAR(255) NOT NULL,
+    `url` VARCHAR(255) NOT NULL,
     PRIMARY KEY (`id`)
 );
 
 INSERT INTO
-    `journey` (`id`, `name`)
-VALUES (1, 'Forêt'),
-    (2, 'Science-Fiction'),
-    (3, 'Montagne'),
-    (4, 'Cosmique'),
-    (5, 'Aventure'),
-    (6, 'Aquatique');
+    `journey` (`id`, `name`, `url`)
+VALUES (
+        1,
+        'Forêt',
+        "https://echappee-celebrement-fantasque.netlify.app/assets/vue-fascinante-foret-par-journee-ensoleillee-montanges-france-DChjSNJQ.jpg"
+    ),
+    (
+        2,
+        'Science-Fiction',
+        "https://echappee-celebrement-fantasque.netlify.app/assets/futuristic-moon-background-EFI8dmdG.jpg"
+    ),
+    (
+        3,
+        'Montagne',
+        "https://echappee-celebrement-fantasque.netlify.app/assets/aiguille-verte-from-mont-blanc-massif-reflecting-water-chamonix-france-B1m7toHw.jpg"
+    ),
+    (
+        4,
+        'Cosmique',
+        "https://echappee-celebrement-fantasque.netlify.app/assets/lamp-design-with-fantasy-style-BWr4aejt.jpg"
+    ),
+    (
+        5,
+        'Aventure',
+        "https://echappee-celebrement-fantasque.netlify.app/assets/hiker-going-up-aiguille-du-midi-CzHPPrY2.jpg"
+    ),
+    (
+        6,
+        'Aquatique',
+        "https://echappee-celebrement-fantasque.netlify.app/assets/underwater-pXECS4TQ.jpg"
+    );
 
 CREATE TABLE IF NOT EXISTS `booking` (
     `id` INT NOT NULL AUTO_INCREMENT,
