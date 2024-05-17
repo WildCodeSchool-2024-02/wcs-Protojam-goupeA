@@ -20,13 +20,15 @@ import aquaman from "../assets/personnage/aquaman.jpg";
 const categories = [
   {
     name: "Forêt",
+    slug: "foret",
     id: "1",
     img: foret,
-    path: "/categorie/foret/",
+    path: "/categorie/foret",
 
     sousCategorie: [
       {
         name: "Yvan Kereun Appa",
+        slug: "yvan-kereun-appa",
         img: yvan,
         activite: "L'Appel de la Forêt de Kereun",
         description:
@@ -34,6 +36,7 @@ const categories = [
       },
       {
         name: "Balou",
+        slug: "balou",
         img: baloo,
         activite: "La Ronde de Balou dans la Jungle",
         description:
@@ -43,12 +46,14 @@ const categories = [
   },
   {
     name: "Science-Fiction",
+    slug: "science-fiction",
     id: "2",
     img: sf,
     path: "/categorie/science-fiction",
     sousCategorie: [
       {
         name: "Dark Vador",
+        slug: "dark-vador",
         img: vador,
         activite: "La Forêt Sombre de Vador",
         description:
@@ -56,6 +61,7 @@ const categories = [
       },
       {
         name: "Ellen Ripley",
+        slug: "ellen-ripley",
         img: ellen,
         activite: "Ripley et la Jungle Spatiale",
         description:
@@ -65,12 +71,14 @@ const categories = [
   },
   {
     name: "Montagne",
+    slug: "montagne",
     id: "3",
     img: montagne,
     path: "/categorie/montagne",
     sousCategorie: [
       {
         name: "Gollum",
+        slug: "gollum",
         img: gollum,
         activite: "L'Ascension Précieuse de Gollum",
         description:
@@ -78,6 +86,7 @@ const categories = [
       },
       {
         name: "Nicolas Hojac",
+        slug: "nicolas-hojac",
         img: hojac,
         activite: "Les Pics Vertigineux de Hojac",
         description:
@@ -87,12 +96,14 @@ const categories = [
   },
   {
     name: "Cosmique",
+    slug: "cosmique",
     id: "4",
     img: cosmique,
     path: "/categorie/cosmique",
     sousCategorie: [
       {
         name: "Pape",
+        slug: "pape",
         img: pape,
         activite: "Les Jardins Célestes du Vatican",
         description:
@@ -100,6 +111,7 @@ const categories = [
       },
       {
         name: "Sylvain Durif",
+        slug: "sylvain-durif",
         img: durif,
         activite: "Les Univers Mystiques de Durif",
         description:
@@ -109,12 +121,14 @@ const categories = [
   },
   {
     name: "Aventure",
+    slug: "aventure",
     id: "5",
     img: aventure,
     path: "/categorie/aventure",
     sousCategorie: [
       {
         name: "Mike Horn",
+        slug: "mike-horn",
         img: horn,
         activité: "Les Quêtes Épiques de Horn",
         description:
@@ -122,6 +136,7 @@ const categories = [
       },
       {
         name: "Denis Brogniart",
+        slug: "denis-brogniart",
         img: denis,
         activite: "L'Expédition Brogniart",
         description:
@@ -131,12 +146,14 @@ const categories = [
   },
   {
     name: "Aquatique",
+    slug: "aquatique",
     id: "6",
     img: aquatique,
     path: "/categorie/aquatique",
     sousCategorie: [
       {
         name: "Jacques-Yves Cousteau",
+        slug: "jacques-yves-cousteau",
         img: cousteau,
         activite: "Les Abysses de Cousteau",
         description:
@@ -144,6 +161,8 @@ const categories = [
       },
       {
         name: "Arthur aka Aquaman Curry",
+        slug: "arthur-aka-aquaman-curry",
+
         img: aquaman,
         activite: "Les Vacances d'Aquaman",
         description:
