@@ -31,7 +31,7 @@ function Reservation() {
           <Popup />
           <Link to="/">
             <button
-              className="closePopup"
+              className="closePopupréservation"
               type="submit"
               onClick={togglePopupClose}
             >
