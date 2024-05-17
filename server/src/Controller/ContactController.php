@@ -9,9 +9,9 @@ class ContactController extends AbstractAPIController
 {
     public function add()
     {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             // clean $_POST data
-            $datacontact = array_map('trim', $_POST);
+            $datacontact = array_map('trim', $_GET);
             $datacontact = array_map('htmlentities', $datacontact);
             // TODO validations (length, format...)
 
