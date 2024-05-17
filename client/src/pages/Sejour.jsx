@@ -28,7 +28,7 @@ function Sejour() {
 
   return (
     <section>
-      <h1 className="titre-echappe">Nos Échappées</h1>
+      <h2>Nos Échappées</h2>
       <div className="bloc">
         <div className="select">
           <select onChange={(e) => setFilterChoice(e.target.value)}>
@@ -66,7 +66,7 @@ function Sejour() {
             </Link>
           ))}
       </div>
-      <Link to={`/categorie/${r.name}/${itemAleatoire.name}`}>
+      <Link to={`/categorie/${r.name}/${s.name}`}>
         <button className="button" type="button" onClick={() => handleFilter()}>
           <p>Random choice</p>
         </button>

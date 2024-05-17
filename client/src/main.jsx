@@ -40,7 +40,7 @@ const router = createBrowserRouter([
         loader: async ({ params }) => {
           const { name } = params;
           try {
-            return fetch(`http://localhost:3000/reservation/${name}`);
+            return fetch(`./reservation/${name}`);
           } catch (error) {
             return error;
           }

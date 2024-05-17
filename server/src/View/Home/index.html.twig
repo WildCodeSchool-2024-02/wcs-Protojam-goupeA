@@ -1,12 +1,12 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-    <h1>Liens vers les différentes tables</h1>
-    <p>Tableau utilisateurs : <a href="/users">/users</a> page.</p>
-    <p>Tableau séjours : <a href="/journey">/journey</a> page.</p>
-    <p>Tableau réservations : <a href="/bookings">/bookings</a> page.</p>
-    <p>Tableau contacts : <a href="/contact">/contact</a> page.</p>
-    <p>Tableau personnages : <a href="/celebrity">/celebrity</a> page.</p>
-    <p>Tableau personnages par id : <a href="/celebrity/show?id=1">/celebrity</a> page.</p>
-    <p>Tableau personnages par id du séjour : <a href="/journey/showCelebrities?id=1">/celebrity</a> page.</p>
+    <h1>Liens vers les différentes données des tables</h1>
+    <p><a href="/users">/users</a> tous les users.</p>
+    <p><a href="/journey">/journey</a> tous les séjours.</p>
+    <p><a href="/bookings">/bookings</a> page.</p>
+    <p><a href="/contact">/contact</a> tous les messages de contact.</p>
+    <p><a href="/celebrity">/celebrity</a> toutes les celebrities.</p>
+    <p><a href="/celebrity/show?id=1">/celebrity</a> celebrity par id.</p>
+    <p><a href="/journey/showCelebrities?id=1">/journey-celebrities</a> celebrities par id du séjour.</p>
 {% endblock %}
