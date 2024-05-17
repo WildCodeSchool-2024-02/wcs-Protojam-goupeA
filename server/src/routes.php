@@ -11,6 +11,7 @@ return [
     'journey' => ['JourneyController', 'index',],
     'journey/edit' => ['JourneyController', 'edit', ['id']],
     'journey/show' => ['JourneyController', 'show', ['id']],
+    'journey/showCelebrities' => ['JourneyController', 'showJourneyCelebrities', ['id']],
     'journey/show/book' => ['BookingController', 'insert', ['id']],
     'bookings' => ['BookingController', 'booking',],
     'register' => ['UserController', 'register',],
