@@ -9,12 +9,21 @@
 
 .logoGithub {
   width: 2.5vw;
+  height: 2.5vw;
+  @media screen and (width >= 1000px) {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+.hrefGithub {
+  display: flex;
+  width: 2.5vw;
   height: auto;
   @media screen and (width >= 1000px) {
     width: 1.5rem;
   }
 }
-
 footer {
   display: flex;
   justify-content: space-around;
@@ -36,6 +45,7 @@ footer {
   }
   li {
     display: flex;
+    align-items: center;
     margin: 0;
     font-size: 0.5rem;
     @media screen and (width >= 1000px) {

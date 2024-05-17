@@ -10,7 +10,7 @@ function Footer() {
             <li>{person.name}</li>
             <li>{person.firstName}</li>
             <li>
-              <a href={person.gitHub}>
+              <a href={person.gitHub} className="hrefGithub">
                 <img
                   className="logoGithub"
                   src={logoGithub}
