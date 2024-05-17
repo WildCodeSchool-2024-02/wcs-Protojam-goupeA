@@ -24,4 +24,6 @@ return [
     'contact' => ['ContactController', 'add'],
     'contact/show' => ['ContactController', 'show', ['id']],
     'user/delete' => ['UserController' , 'delete', ['id']],
+    'celebrity' => ['CelebrityController', 'index',],
+    'celebrity/show' => ['CelebrityController', 'show', ['id']],
 ];

@@ -19,13 +19,13 @@ class BookingManager extends AbstractManager
         return $statement->fetchAll();
     }
 
-    public function insert($startDate, $endDate, $journey, $userId): string
+    public function insert($startDate, $endDate, $celebrity, $userId): string
     {
-        $query = "INSERT INTO " . static::TABLE . " (start_date, end_date, journey_id, user_id, isBooked) VALUES
-        (:start_date, :end_date, :journey_id, :user_id, 1)";
+        $query = "INSERT INTO " . static::TABLE . " (start_date, end_date, celebrity_id, user_id, isBooked) VALUES
+        (:start_date, :end_date, :celebrity_id, :user_id, 1)";
         $statement = $this->pdo->prepare($query);
         $statement->bindValue(':user_id', $userId);
-        $statement->bindValue(':journey_id', $journey, PDO::PARAM_INT);
+        $statement->bindValue(':celebrity_id', $celebrity, PDO::PARAM_INT);
         $statement->bindValue(':start_date', $startDate);
         $statement->bindValue(':end_date', $endDate);
         $statement->execute();
@@ -34,7 +34,7 @@ class BookingManager extends AbstractManager
 
     public function insertservice(string $id): string
     {
-        $query = "INSERT INTO option (booking_id, option1, option2, option3, option4) 
+        $query = "INSERT INTO service (booking_id, option1, option2, option3, option4) 
                 VALUES (:booking_id, 0, 0, 0, 0)";
         $statement = $this->pdo->prepare($query);
         $statement->bindValue(':booking_id', $id, PDO::PARAM_INT);
@@ -44,12 +44,12 @@ class BookingManager extends AbstractManager
 
     public function getReservationById(int $id)
     {
-        $query = "SELECT booking.id, u.firstname, u.lastname, journey.name,
+        $query = "SELECT booking.id, u.firstname, u.lastname, celebrity.name,
         booking.start_date, booking.end_date,
         DATE_FORMAT(booking.start_date, '%d %M %Y') AS start,
         DATE_FORMAT(booking.end_date, '%d %M %Y') AS end FROM " . static::TABLE .
         " JOIN user AS u ON u.id = booking.user_id
-        JOIN journey ON journey.id = booking.journey_id WHERE u.id = :id";
+        JOIN celebrity ON celebrity.id = booking.celebrity_id WHERE u.id = :id";
         $statement = $this->pdo->prepare($query);
         $statement->bindValue(':id', $id);
         $statement->execute();
@@ -58,11 +58,11 @@ class BookingManager extends AbstractManager
 
     public function getAllReservation()
     {
-        $query = "SELECT booking.id, u.firstname, u.lastname, j.name,
+        $query = "SELECT booking.id, u.firstname, u.lastname, c.name,
         DATE_FORMAT(booking.start_date, '%d %M %Y') AS start,
         DATE_FORMAT(booking.end_date, '%d %M %Y') AS end FROM " . static::TABLE .
         " JOIN user AS u ON u.id = booking.user_id
-        JOIN journey AS j ON j.id = booking.journey_id";
+        JOIN celebrity AS c ON c.id = booking.celebrity_id";
         $statement = $this->pdo->prepare($query);
         $statement->execute();
         return $statement->fetchAll();
