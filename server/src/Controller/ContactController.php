@@ -9,9 +9,9 @@ class ContactController extends AbstractAPIController
 {
     public function add()
     {
-        if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // clean $_POST data
-            $datacontact = array_map('trim', $_GET);
+            $datacontact = array_map('trim', $_POST);
             $datacontact = array_map('htmlentities', $datacontact);
             // TODO validations (length, format...)
 
@@ -21,7 +21,7 @@ class ContactController extends AbstractAPIController
 
             $client = HttpClient::create();
             $response = $client->request(
-                'GET',
+                'POST',
                 'https://echappee-celebrement-fantasque.netlify.app/contact'
             );
 
