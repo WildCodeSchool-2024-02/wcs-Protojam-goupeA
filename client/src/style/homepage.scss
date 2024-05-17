@@ -8,7 +8,20 @@
     }
   }
 }
+h2 {
+  text-align: center;
+  padding: 20px;
 
+  margin-top: 30px;
+  background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
+  background-size: cover;
+  color: #7e101000;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  text-transform: uppercase;
+  font-size: 4rem;
+  line-height: 0.75;
+}
 .categorie-container {
   position: relative;
   display: flex;
