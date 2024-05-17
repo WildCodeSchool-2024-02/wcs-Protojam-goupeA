@@ -66,7 +66,7 @@ function Sejour() {
             </Link>
           ))}
       </div>
-      <Link to={`/categorie/${r.name}/${itemAleatoire.name}`}>
+      <Link to={`/categorie/${r.name}/${s.name}`}>
         <button className="button" type="button" onClick={() => handleFilter()}>
           <p>Random choice</p>
         </button>
