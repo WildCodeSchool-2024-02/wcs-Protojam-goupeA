@@ -1,31 +1,47 @@
 import { useState } from "react";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Popup from "../components/Popup";
+import categories from "../data/categoriesData";
 
 function Reservation() {
-  const bidon = useLoaderData();
-  console.info(bidon);
   const [showPopup, setShowPopup] = useState(false);
+  const [selectedSubCategory, setSelectedSubCategory] = useState(null);
 
   const togglePopupClose = () => {
     setShowPopup(false);
   };
 
-  const reservation = () => {
+  const reservation = (subCategory) => {
+    setSelectedSubCategory(subCategory);
     setShowPopup(true);
   };
 
+  const firstSubCategories = categories.map(
+    (category) => category.sousCategorie[0]
+  );
+
   return (
     <section className="resa-container">
-      <h2>Confirmation reservation {bidon[0].vip}</h2>
-      <p>
-        Vous souhaitez reserver le voyage avec {bidon[0].vip} afin de profiter
-        de l'activite {bidon[0].activity} !
-      </p>
-      <p>Je consens aux conditions: {bidon[0].condition}</p>
-      <button type="submit" onClick={reservation}>
-        Reserver
-      </button>
+      <div>
+        <h2>Confirmation réservation</h2>
+        <p>
+          Vous souhaitez réserver le voyage avec{" "}
+          {selectedSubCategory
+            ? selectedSubCategory.name
+            : firstSubCategories[0].name}{" "}
+          afin de profiter de l'activité{" "}
+          {selectedSubCategory
+            ? selectedSubCategory.activite
+            : firstSubCategories[0].activite}{" "}
+          !
+        </p>
+        <button
+          type="submit"
+          onClick={() => reservation(firstSubCategories[0])}
+        >
+          Réserver
+        </button>
+      </div>
       {showPopup && (
         <div className="popupContainer">
           <Popup />
