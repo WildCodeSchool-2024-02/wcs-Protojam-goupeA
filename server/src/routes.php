@@ -19,4 +19,6 @@ return [
     'contact' => ['ContactController', 'add'],
     'contact/show' => ['ContactController', 'show'],
     'users' => ['UserController' , 'users'],
+    'celebrity' => ['CelebrityController' , 'index'],
+    'celebrity/show' => ['CelebrityController', 'show', ['id']],
 ];
