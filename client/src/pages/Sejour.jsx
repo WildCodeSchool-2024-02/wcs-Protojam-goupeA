@@ -28,7 +28,7 @@ function Sejour() {
 
   return (
     <section>
-      <h1 className="titre-echappe">Nos Échappées</h1>
+      <h2>Nos Échappées</h2>
       <div className="bloc">
         <div className="select">
           <select onChange={(e) => setFilterChoice(e.target.value)}>
