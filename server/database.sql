@@ -1,4 +1,4 @@
--- Active: 1713169810273@@127.0.0.1@3306@protojama
+-- Active: 1712247778999@@127.0.0.1@3306@protojam_a
 -- phpMyAdmin SQL Dump
 -- version 4.5.4.1deb2ubuntu2
 -- http://www.phpmyadmin.net
@@ -131,7 +131,7 @@ VALUES (
 CREATE TABLE IF NOT EXISTS `booking` (
     `id` INT NOT NULL AUTO_INCREMENT,
     `user_id` INT NOT NULL,
-    `journey_id` INT NULL,
+    `celebrity_id` INT NULL,
     `start_date` DATE NOT NULL,
     `end_date` DATE NOT NULL,
     `isBooked` TINYINT(1) NOT NULL DEFAULT 0,
@@ -152,7 +152,7 @@ ALTER TABLE booking
 ADD CONSTRAINT fk_booking_user FOREIGN KEY (user_id) REFERENCES user (id);
 
 ALTER TABLE booking
-ADD CONSTRAINT fk_booking_journey FOREIGN KEY (journey_id) REFERENCES journey (id);
+ADD CONSTRAINT fk_booking_celebrity FOREIGN KEY (celebrity_id) REFERENCES celebrity (id);
 
 ALTER TABLE service
 ADD CONSTRAINT fk_service_booking FOREIGN KEY (booking_id) REFERENCES booking (id);
@@ -164,3 +164,206 @@ CREATE TABLE `contact` (
     `email` VARCHAR(100),
     `message` TEXT NOT NULL
 );
+
+CREATE TABLE IF NOT EXISTS `celebrity` (
+    `id` INT NOT NULL AUTO_INCREMENT,
+    `name` VARCHAR(50) NOT NULL,
+    `activities` VARCHAR(255) NOT NULL,
+    `condition` VARCHAR(255) NOT NULL,
+    `description` TEXT(65535) NOT NULL,
+    `price` INT NOT NULL,
+    `journey_id` INT NOT NULL,
+    PRIMARY KEY (`id`)
+);
+
+INSERT INTO
+    `celebrity` (
+        `id`,
+        `name`,
+        `activities`,
+        `condition`,
+        `description`,
+        `price`,
+        `journey_id`,
+        `url`
+    )
+VALUES (
+        1,
+        'Yvan Kereun Appa',
+        "L'Appel de la Forêt de Kereun",
+        'No fear',
+        'Rejoignez Yvan Kereun Appa dans une forêt où les 
+        arbres murmurent des secrets anciens et les animaux 
+        organisent des soirées dansantes. Marchez à travers 
+        des clairières enchantées et découvrez pourquoi les 
+        écureuils le considèrent comme leur gourou. Une aventure 
+        déjantée pour se déconnecter et rire aux éclats.',
+        '150',
+        1,
+        'https://echappee-celebrement-fantasque.netlify.app/assets/Yvan_Kereun_Appa-CMGI_HGT.jpg'
+    ),
+    (
+        2,
+        'Balou',
+        "L'Appel de la Forêt de Kereun",
+        'No fear',
+        'Rejoignez Yvan Kereun Appa dans une forêt où les 
+        arbres murmurent des secrets anciens et les animaux 
+        organisent des soirées dansantes. Marchez à travers 
+        des clairières enchantées et découvrez pourquoi les 
+        écureuils le considèrent comme leur gourou. Une aventure 
+        déjantée pour se déconnecter et rire aux éclats.',
+        '150',
+        1,
+        'https://echappee-celebrement-fantasque.netlify.app/assets/Baloo-y36sHIYl.png'
+    ),
+    (
+        3,
+        'Dark Vador',
+        "L'Appel de la Forêt de Kereun",
+        'No fear',
+        'Rejoignez Yvan Kereun Appa dans une forêt où les 
+        arbres murmurent des secrets anciens et les animaux 
+        organisent des soirées dansantes. Marchez à travers 
+        des clairières enchantées et découvrez pourquoi les 
+        écureuils le considèrent comme leur gourou. Une aventure 
+        déjantée pour se déconnecter et rire aux éclats.',
+        '150',
+        2,
+        'https://echappee-celebrement-fantasque.netlify.app/assets/darkvador-DFzFOZKL.jpg'
+    ),
+    (
+        4,
+        'Ellen Ripley',
+        "L'Appel de la Forêt de Kereun",
+        'No fear',
+        'Rejoignez Yvan Kereun Appa dans une forêt où les 
+        arbres murmurent des secrets anciens et les animaux 
+        organisent des soirées dansantes. Marchez à travers 
+        des clairières enchantées et découvrez pourquoi les 
+        écureuils le considèrent comme leur gourou. Une aventure 
+        déjantée pour se déconnecter et rire aux éclats.',
+        '150',
+        2,
+        'https://echappee-celebrement-fantasque.netlify.app/assets/ellenripley-B7JR2zA2.webp'
+    ),
+    (
+        5,
+        'Gollum',
+        "L'Appel de la Forêt de Kereun",
+        'No fear',
+        'Rejoignez Yvan Kereun Appa dans une forêt où les 
+        arbres murmurent des secrets anciens et les animaux 
+        organisent des soirées dansantes. Marchez à travers 
+        des clairières enchantées et découvrez pourquoi les 
+        écureuils le considèrent comme leur gourou. Une aventure 
+        déjantée pour se déconnecter et rire aux éclats.',
+        '150',
+        3,
+        'https://echappee-celebrement-fantasque.netlify.app/assets/gollum-FNfyQutf.jpg'
+    ),
+    (
+        6,
+        'Nicolas Hojac',
+        "L'Appel de la Forêt de Kereun",
+        'No fear',
+        'Rejoignez Yvan Kereun Appa dans une forêt où les 
+        arbres murmurent des secrets anciens et les animaux 
+        organisent des soirées dansantes. Marchez à travers 
+        des clairières enchantées et découvrez pourquoi les 
+        écureuils le considèrent comme leur gourou. Une aventure 
+        déjantée pour se déconnecter et rire aux éclats.',
+        '150',
+        3,
+        'https://echappee-celebrement-fantasque.netlify.app/assets/hojac-8BExEV3h.jpg'
+    ),
+    (
+        7,
+        'Pape',
+        "L'Appel de la Forêt de Kereun",
+        'No fear',
+        'Rejoignez Yvan Kereun Appa dans une forêt où les 
+        arbres murmurent des secrets anciens et les animaux 
+        organisent des soirées dansantes. Marchez à travers 
+        des clairières enchantées et découvrez pourquoi les 
+        écureuils le considèrent comme leur gourou. Une aventure 
+        déjantée pour se déconnecter et rire aux éclats.',
+        '150',
+        4,
+        'https://echappee-celebrement-fantasque.netlify.app/assets/pape2-Bu0X7Spe.jpg'
+    ),
+    (
+        8,
+        'Sylvain Durif',
+        "L'Appel de la Forêt de Kereun",
+        'No fear',
+        'Rejoignez Yvan Kereun Appa dans une forêt où les 
+        arbres murmurent des secrets anciens et les animaux 
+        organisent des soirées dansantes. Marchez à travers 
+        des clairières enchantées et découvrez pourquoi les 
+        écureuils le considèrent comme leur gourou. Une aventure 
+        déjantée pour se déconnecter et rire aux éclats.',
+        '150',
+        4,
+        'https://echappee-celebrement-fantasque.netlify.app/assets/sylvaindurif-SlxzwGkp.jpg'
+    ),
+    (
+        9,
+        'Mike Horn',
+        "L'Appel de la Forêt de Kereun",
+        'No fear',
+        'Rejoignez Yvan Kereun Appa dans une forêt où les 
+        arbres murmurent des secrets anciens et les animaux 
+        organisent des soirées dansantes. Marchez à travers 
+        des clairières enchantées et découvrez pourquoi les 
+        écureuils le considèrent comme leur gourou. Une aventure 
+        déjantée pour se déconnecter et rire aux éclats.',
+        '150',
+        5,
+        'https://echappee-celebrement-fantasque.netlify.app/assets/mikehorn-D8WGJ9i0.jpg'
+    ),
+    (
+        10,
+        'Denis Brogniart',
+        "L'Appel de la Forêt de Kereun",
+        'No fear',
+        'Rejoignez Yvan Kereun Appa dans une forêt où les 
+        arbres murmurent des secrets anciens et les animaux 
+        organisent des soirées dansantes. Marchez à travers 
+        des clairières enchantées et découvrez pourquoi les 
+        écureuils le considèrent comme leur gourou. Une aventure 
+        déjantée pour se déconnecter et rire aux éclats.',
+        '150',
+        5,
+        'https://echappee-celebrement-fantasque.netlify.app/assets/denisbrogniart-CtWODnTc.jpg'
+    ),
+    (
+        11,
+        'Jacques-Yves Cousteau',
+        "L'Appel de la Forêt de Kereun",
+        'No fear',
+        'Rejoignez Yvan Kereun Appa dans une forêt où les 
+        arbres murmurent des secrets anciens et les animaux 
+        organisent des soirées dansantes. Marchez à travers 
+        des clairières enchantées et découvrez pourquoi les 
+        écureuils le considèrent comme leur gourou. Une aventure 
+        déjantée pour se déconnecter et rire aux éclats.',
+        '150',
+        6,
+        'https://echappee-celebrement-fantasque.netlify.app/assets/cousteau-vZc1kfIZ.jpg'
+    ),
+    (
+        12,
+        'Arthur aka Aquaman Curry',
+        "L'Appel de la Forêt de Kereun",
+        'No fear',
+        'Rejoignez Yvan Kereun Appa dans une forêt où les 
+        arbres murmurent des secrets anciens et les animaux 
+        organisent des soirées dansantes. Marchez à travers 
+        des clairières enchantées et découvrez pourquoi les 
+        écureuils le considèrent comme leur gourou. Une aventure 
+        déjantée pour se déconnecter et rire aux éclats.',
+        '150',
+        6,
+        'https://echappee-celebrement-fantasque.netlify.app/assets/aquaman-GbFQCF8f.jpg'
+    );

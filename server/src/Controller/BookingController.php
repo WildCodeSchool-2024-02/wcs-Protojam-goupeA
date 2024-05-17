@@ -3,15 +3,15 @@
 namespace App\Controller;
 
 use App\Model\BookingManager;
-use App\Model\JourneyManager;
+use App\Model\CelebrityManager;
 use Symfony\Component\HttpClient\HttpClient;
 
 class BookingController extends AbstractAPIController
 {
     public function insert(int $id): string
     {
-        $journeyManager = new JourneyManager();
-        $journey = $journeyManager->selectOneById($id);
+        $celebrityManager = new CelebrityManager();
+        $celebrity = $celebrityManager->selectOneById($id);
 
         $bookingManager = new BookingManager();
         $dates = $bookingManager->selectBooked($id);
@@ -29,14 +29,14 @@ class BookingController extends AbstractAPIController
             $userId = $_SESSION['user_id'];
             $dateStart = $content['start_date'];
             $dateEnd = $content['end_date'];
-            $journey = trim($content['journey_id']);
+            $celebrity = trim($content['celebrity_id']);
 
 
-            $bookingManager->insert($dateStart, $dateEnd, $journey, $userId);
-            $bookingManager->insertService($bookingManager->insert($dateStart, $dateEnd, $journey, $userId));
+            $bookingManager->insert($dateStart, $dateEnd, $celebrity, $userId);
+            $bookingManager->insertService($bookingManager->insert($dateStart, $dateEnd, $celebrity, $userId));
             header('Location: /show?id=' . $id);
         }
-        return json_encode(['journey' => $journey, 'dates' => $dates,]);
+        return json_encode(['celebrity' => $celebrity, 'dates' => $dates,]);
     }
 
     public function booking(): string
