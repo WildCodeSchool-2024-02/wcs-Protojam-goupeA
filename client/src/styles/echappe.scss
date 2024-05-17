@@ -13,11 +13,13 @@
   grid-template-columns: 1fr 1fr 1fr;
 
   .img-container {
-    width: 300px;
+    width: 310px;
     height: 200px;
     border-radius: 20px;
   }
-
+  .echappe-container h3 {
+    font-size: 1em;
+  }
   .echappe-container {
     display: flex;
     flex-direction: column-reverse;
@@ -26,10 +28,10 @@
     text-align: center;
     text-decoration: none;
     color: #cacfd6;
-    font-size: 2rem;
-    width: 310px;
-    height: 250px;
-    margin: 20px auto;
+
+    width: 320px;
+    height: 260px;
+    margin: 30px auto;
     background-color: #000000;
     box-shadow:
       5px 5px 5px 0px #000000,

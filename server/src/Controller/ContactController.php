@@ -9,9 +9,9 @@ class ContactController extends AbstractAPIController
 {
     public function add()
     {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             // clean $_POST data
-            $datacontact = array_map('trim', $_POST);
+            $datacontact = array_map('trim', $_GET);
             $datacontact = array_map('htmlentities', $datacontact);
             // TODO validations (length, format...)
 
@@ -19,7 +19,16 @@ class ContactController extends AbstractAPIController
             $contactManager = new ContactManager();
             $contact = $contactManager->insert($datacontact);
 
-            return json_encode($contact);
+            $client = HttpClient::create();
+            $response = $client->request(
+                'GET',
+                'https://echappee-celebrement-fantasque.netlify.app/contact'
+            );
+
+            $content = $response->getContent();
+            $content = $response->toArray();
+
+            return json_encode(['contact' => $contact, 'content' => $content]);
         }
     }
 

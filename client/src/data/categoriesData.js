@@ -22,7 +22,8 @@ const categories = [
     name: "Forêt",
     id: "1",
     img: foret,
-    path: "/categorie/foret",
+    path: "/categorie/foret/",
+
     sousCategorie: [
       {
         name: "Yvan Kereun Appa",
