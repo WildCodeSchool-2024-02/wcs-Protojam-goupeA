@@ -1,4 +1,3 @@
-
 @font-face {
   font-family: "anthemia";
   src: url("./assets/font/anthemia/AnthemiaRegular.ttf");
@@ -17,105 +16,67 @@ $color-categorie: #ffffff;
 
 .header-container {
   display: flex;
-
   justify-content: space-evenly;
   align-items: center;
   margin-top: 1rem;
   margin-bottom: 2rem;
-}
 
-.titre-h1 {
-  font-family: "anthemia";
-  color: $color-title;
-  font-size: 1.8rem;
-  font-weight: bold;
-
-  h6 {
-    display: none;
-  }
-
-  .logo {
-    width: 100px;
-  }
-
-  nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    border-top: 1px solid $color-textshadow;
-    border-bottom: 1px solid $color-textshadow;
-    padding: 20px;
-    font-family: "anthemia";
-  justify-content: space-around;
-  
-  }
-
-  a {
-    color: $color-title;
-    text-decoration: none;
-    font-size: 2rem;
-    cursor: pointer;
-    font-weight: bold;
-    text-shadow:
-      2px 2px 1px $color-nav,
-      2px -2px 1px $color-nav,
-      -2px 2px 1px $color-nav,
-      -2px -2px 1px $color-nav,
-      2px 0px 1px $color-nav,
-      0px 2px 1px $color-nav,
-      -2px 0px 1px $color-nav,
-      0px -2px 1px $color-nav;
-  }
-
-  a:hover {
-    color: $color-nav;
-    text-shadow:
-      2px 2px 0 $color-title,
-      2px -2px 0 $color-title,
-      -2px 2px 0 $color-title,
-      -2px -2px 0 $color-title,
-      2px 0px 0 $color-title,
-      0px 2px 0 $color-title,
-      -2px 0px 0 $color-title,
-      0px -2px 0 $color-title;
-  }
-}
-
-@media screen and (min-width: 1000px) {
   .titre-h1 {
-    font-size: 5rem;
+    font-family: "anthemia";
+    color: $color-title;
+    font-size: 1.8rem;
+    font-weight: bold;
 
-  justify-content: center;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-  .ah1 {
-    text-decoration: none;
-    .titre-h1 {
-      font-family: "anthemia";
-      color: #517664;
-      font-size: 1.8rem;
-      font-weight: bolder;
-      font-weight: bold;
-
-      @media screen and (width >= 1000px) {
-        font-size: 5rem;
-      }
+    @media screen and (min-width: 1000px) {
+      font-size: 5rem;
     }
   }
 }
 
+h6 {
+  display: none;
+}
 
+.logo {
+  width: 100px;
+}
 
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid $color-textshadow;
+  border-bottom: 1px solid $color-textshadow;
+  padding: 20px;
   font-family: "anthemia";
-  @media screen and (width >= 900px) {
-  }
-  a {
-    text-decoration: none;
-    color: #cacfd6;
-    font-size: 2rem;
+}
 
-    text-shadow: 2px 2px 1px $color-title;
-    font-weight: bold;
+a {
+  color: $color-title;
+  text-decoration: none;
+  font-size: 2rem;
+  cursor: pointer;
+  font-weight: bold;
+  text-shadow:
+    2px 2px 1px $color-nav,
+    2px -2px 1px $color-nav,
+    -2px 2px 1px $color-nav,
+    -2px -2px 1px $color-nav,
+    2px 0px 1px $color-nav,
+    0px 2px 1px $color-nav,
+    -2px 0px 1px $color-nav,
+    0px -2px 1px $color-nav;
+}
 
-  }
+a:hover {
+  color: $color-nav;
+  text-shadow:
+    2px 2px 0 #517664,
+    2px -2px 0 #517664,
+    -2px 2px 0 #517664,
+    -2px -2px 0 #517664,
+    2px 0px 0 #517664,
+    0px 2px 0 #517664,
+    -2px 0px 0 #517664,
+    0px -2px 0 #517664;
 }
