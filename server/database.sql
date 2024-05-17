@@ -1,4 +1,4 @@
--- Active: 1712247778999@@127.0.0.1@3306@protojam_a
+-- Active: 1713169810273@@127.0.0.1@3306@protojama
 -- phpMyAdmin SQL Dump
 -- version 4.5.4.1deb2ubuntu2
 -- http://www.phpmyadmin.net
@@ -91,7 +91,7 @@ INSERT INTO
     `journey` (`id`, `name`)
 VALUES (1, 'Forêt'),
     (2, 'Science-Fiction'),
-    (3 'Montagne'),
+    (3, 'Montagne'),
     (4, 'Cosmique'),
     (5, 'Aventure'),
     (6, 'Aquatique');
