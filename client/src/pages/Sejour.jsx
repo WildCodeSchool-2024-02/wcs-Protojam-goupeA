@@ -49,13 +49,14 @@ function Sejour() {
         </div>
       </div>
       <div className="category-container">
+        {console.info(personnage.celebrities)}
         {personnage.celebrities
           .filter(
             (categorie) =>
               categorie.journey_id === filterChoice || !filterChoice
           )
           .map((categorie) => (
-            <Link to={categorie.journey_1} key={categorie.id}>
+            <Link to={categorie.journey_id} key={categorie.id}>
               <div className="sousCategorie-container">
                 {personnage.celebrities.map((sousCat) => (
                   <div className="echappe-container" key={sousCat.id}>
