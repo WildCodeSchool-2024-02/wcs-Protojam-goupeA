@@ -31,4 +31,14 @@ class JourneyManager extends AbstractManager
 
         return $statement->execute();
     }
+
+    public function getJourneyByCelebrities(int $id)
+    {
+        $query = "SELECT journey.id, journey.name, celebrity.id, celebrity.name FROM celebrity
+         LEFT JOIN " . self::TABLE . " ON celebrity.journey_id = journey.id WHERE journey.id = :id";
+        $statement = $this->pdo->prepare($query);
+        $statement->bindValue(':id', $id);
+        $statement->execute();
+        return $statement->fetchAll();
+    }
 }

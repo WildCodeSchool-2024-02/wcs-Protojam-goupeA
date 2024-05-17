@@ -11,6 +11,7 @@ return [
     'journey' => ['JourneyController', 'index',],
     'journey/edit' => ['JourneyController', 'edit', ['id']],
     'journey/show' => ['JourneyController', 'show', ['id']],
+    'journey/showCelebrities' => ['JourneyController', 'showJourneyCelebrities', ['id']],
     'journey/show/book' => ['BookingController', 'insert', ['id']],
     'bookings' => ['BookingController', 'booking',],
     'register' => ['UserController', 'register',],
@@ -19,4 +20,6 @@ return [
     'contact' => ['ContactController', 'add'],
     'contact/show' => ['ContactController', 'show'],
     'users' => ['UserController' , 'users'],
+    'celebrity' => ['CelebrityController' , 'index'],
+    'celebrity/show' => ['CelebrityController', 'show', ['id']],
 ];

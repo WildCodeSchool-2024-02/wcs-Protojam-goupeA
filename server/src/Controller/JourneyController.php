@@ -23,6 +23,14 @@ class JourneyController extends AbstractAPIController
         return json_encode(['journey' => $journey]);
     }
 
+    public function showJourneyCelebrities(int $id): string
+    {
+        $journeyManager = new JourneyManager();
+        $journey = $journeyManager->getJourneyByCelebrities($id);
+
+        return json_encode(['journey' => $journey]);
+    }
+
     public function edit(int $id)
     {
         $journeyManager = new JourneyManager();
