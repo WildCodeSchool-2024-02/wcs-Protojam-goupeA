@@ -5,14 +5,12 @@ import categories from "../data/categoriesData";
 
 function Reservation() {
   const [showPopup, setShowPopup] = useState(false);
-  const [selectedSubCategory, setSelectedSubCategory] = useState(null);
 
   const togglePopupClose = () => {
     setShowPopup(false);
   };
 
-  const reservation = (subCategory) => {
-    setSelectedSubCategory(subCategory);
+  const reservation = () => {
     setShowPopup(true);
   };
 
@@ -22,26 +20,16 @@ function Reservation() {
 
   return (
     <section className="resa-container">
-      <div>
-        <h2>Confirmation réservation</h2>
-        <p>
-          Vous souhaitez réserver le voyage avec{" "}
-          {selectedSubCategory
-            ? selectedSubCategory.name
-            : firstSubCategories[0].name}{" "}
-          afin de profiter de l'activité{" "}
-          {selectedSubCategory
-            ? selectedSubCategory.activite
-            : firstSubCategories[0].activite}{" "}
-          !
-        </p>
-        <button
-          type="submit"
-          onClick={() => reservation(firstSubCategories[0])}
-        >
-          Réserver
-        </button>
-      </div>
+      <h2>Confirmation réservation</h2>
+      <p>
+        Vous avez réserver votre voyage ! Toute l'équipe de Échappée Célébrement
+        Fantasque vous remercie et vous souhaitons d'avance un excellent voyage
+        !
+      </p>
+      <button type="submit" onClick={() => reservation(firstSubCategories[0])}>
+        Réserver
+      </button>
+
       {showPopup && (
         <div className="popupContainer">
           <Popup />
