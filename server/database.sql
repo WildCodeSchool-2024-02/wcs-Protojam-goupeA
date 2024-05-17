@@ -1,4 +1,4 @@
--- Active: 1712247778999@@127.0.0.1@3306@protojam_a
+-- Active: 1713169810273@@127.0.0.1@3306@protojama
 -- phpMyAdmin SQL Dump
 -- version 4.5.4.1deb2ubuntu2
 -- http://www.phpmyadmin.net
@@ -148,23 +148,6 @@ CREATE TABLE IF NOT EXISTS `service` (
     PRIMARY KEY (`id`)
 );
 
-ALTER TABLE booking
-ADD CONSTRAINT fk_booking_user FOREIGN KEY (user_id) REFERENCES user (id);
-
-ALTER TABLE booking
-ADD CONSTRAINT fk_booking_celebrity FOREIGN KEY (celebrity_id) REFERENCES celebrity (id);
-
-ALTER TABLE service
-ADD CONSTRAINT fk_service_booking FOREIGN KEY (booking_id) REFERENCES booking (id);
-
-CREATE TABLE `contact` (
-    `id` INT PRIMARY KEY AUTO_INCREMENT,
-    `firstname` VARCHAR(100) NOT NULL,
-    `lastname` VARCHAR(100) NOT NULL,
-    `email` VARCHAR(100),
-    `message` TEXT NOT NULL
-);
-
 CREATE TABLE IF NOT EXISTS `celebrity` (
     `id` INT NOT NULL AUTO_INCREMENT,
     `name` VARCHAR(50) NOT NULL,
@@ -173,6 +156,7 @@ CREATE TABLE IF NOT EXISTS `celebrity` (
     `description` TEXT(65535) NOT NULL,
     `price` INT NOT NULL,
     `journey_id` INT NOT NULL,
+    `url` VARCHAR(255) NOT NULL,
     PRIMARY KEY (`id`)
 );
 
@@ -367,3 +351,20 @@ VALUES (
         6,
         'https://echappee-celebrement-fantasque.netlify.app/assets/aquaman-GbFQCF8f.jpg'
     );
+
+ALTER TABLE booking
+ADD CONSTRAINT fk_booking_user FOREIGN KEY (user_id) REFERENCES user (id);
+
+ALTER TABLE booking
+ADD CONSTRAINT fk_booking_celebrity FOREIGN KEY (celebrity_id) REFERENCES celebrity (id);
+
+ALTER TABLE service
+ADD CONSTRAINT fk_service_booking FOREIGN KEY (booking_id) REFERENCES booking (id);
+
+CREATE TABLE `contact` (
+    `id` INT PRIMARY KEY AUTO_INCREMENT,
+    `firstname` VARCHAR(100) NOT NULL,
+    `lastname` VARCHAR(100) NOT NULL,
+    `email` VARCHAR(100),
+    `message` TEXT NOT NULL
+);
