@@ -10,6 +10,14 @@ import Contact from "./pages/Contact";
 import Categorie from "./pages/Categorie";
 import Personnages from "./pages/Personnages";
 
+const perso = async () => {
+  const response = await fetch(
+    "https://wcs-protojam-goupea.onrender.com/celebrity"
+  );
+  const data = await response.json();
+  return data;
+};
+
 const router = createBrowserRouter([
   {
     element: <App />,
@@ -17,10 +25,12 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Accueil />,
+        loader: perso,
       },
       {
         path: "/sejour",
         element: <Sejour />,
+        loader: perso,
       },
       {
         path: "/contact",
