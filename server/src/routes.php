@@ -17,9 +17,6 @@ return [
     'login' => ['UserController', 'login',],
     'logout' => ['UserController', 'logout',],
     'contact' => ['ContactController', 'add'],
-    'user/delete' => ['UserController' , 'delete', ['id']],
-    'celebrity' => ['CelebrityController', 'index',],
-    'celebrity/show' => ['CelebrityController', 'show', ['id']],
     'contact/show' => ['ContactController', 'show'],
     'users' => ['UserController' , 'users'],
 ];
