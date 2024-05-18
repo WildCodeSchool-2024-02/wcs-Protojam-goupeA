@@ -14,7 +14,7 @@ const perso = async () => {
     "https://wcs-protojam-goupea.onrender.com/celebrity"
   );
   const data = await response.json();
-  return data;
+  return data.celebrities;
 };
 
 const router = createBrowserRouter([
@@ -46,7 +46,7 @@ const router = createBrowserRouter([
         loader: perso,
       },
       {
-        path: "/reservation/:name",
+        path: "./reservation/:name",
         element: <Reservation />,
         loader: async ({ params }) => {
           const { name } = params;

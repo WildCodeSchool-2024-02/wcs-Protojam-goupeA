@@ -3,20 +3,20 @@ import { Link, useLocation, useLoaderData } from "react-router-dom";
 import { useApi } from "../context/ApiContext";
 
 function Categorie() {
-  const personnage = useLoaderData();
+  const celebrities = useLoaderData();
   const { datas } = useApi();
 
   const location = useLocation(); // recupere le path
 
+  const test = [];
   /* const idSend = location.state.idSend; */
   const idSend = 1;
   const categoryName = location.pathname.split("/")[1];
   console.info("datas", categoryName);
 
-  const selectedCategory = personnage.celebrities.find(
+  const selectedCategory = celebrities.find(
     (categorie) => categorie.journey_id === datas[0].id
   );
-  console.info("selectCat", selectedCategory);
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -26,16 +26,15 @@ function Categorie() {
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === personnage.celebrities.length - 1 ? 0 : prevIndex + 1
+      prevIndex === test.length - 1 ? 0 : prevIndex + 1
     );
   };
 
   const prevSlide = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? personnage.celebrities.length - 1 : prevIndex - 1
+      prevIndex === 0 ? test.length - 1 : prevIndex - 1
     );
   };
-  const test = [];
 
   return (
     <div className="container-title">
@@ -48,20 +47,21 @@ function Categorie() {
       <div className="carousel">
         <div className="carousel-images">
           {" "}
-          {personnage.celebrities.map((tab) =>
+          {celebrities.map((tab) =>
             tab.journey_id === idSend ? test.push(tab) : ""
           )}
           <div className="slide active">
             <Link
-              to={`./${personnage.celebrities[currentIndex].name}`}
+              to={`./${celebrities[currentIndex].name}`}
               className="sous-categorie-container"
             >
+              {console.info(test)}
               <img
                 className="sous-categorie-img"
                 src={test[currentIndex].url}
                 alt={test[currentIndex].name}
               />
-              <h3>{personnage.celebrities[currentIndex].name}</h3>
+              <h3>{celebrities[currentIndex].name}</h3>
             </Link>
           </div>
         </div>

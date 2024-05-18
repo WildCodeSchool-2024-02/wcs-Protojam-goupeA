@@ -38,7 +38,7 @@ function Personnages() {
           </ul>
         </div>
         <div className="divButton">
-          <Link to={`/reservation/${personnage.name}`}>
+          <Link to={`./${personnage.name}`}>
             <button type="button" className="button">
               Réserver
             </button>

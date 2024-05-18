@@ -2,7 +2,7 @@ import { Link, useLoaderData } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 function Sejour() {
-  const personnage = useLoaderData();
+  const celebrities = useLoaderData();
 
   const [datas, setDatas] = useState([]);
 
@@ -36,7 +36,7 @@ function Sejour() {
       <div className="category-container">
         <div>
           <div className="sousCategorie-container">
-            {personnage.celebrities.map((sousCat) => (
+            {celebrities.map((sousCat) => (
               <div className="echappe-container" key={sousCat.id}>
                 div
                 <Link to={`./${sousCat.name}`} className="sous-categorie-link">
