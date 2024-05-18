@@ -1,12 +1,30 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
-import categories from "../data/categoriesData";
+import { Link, useLocation, useLoaderData } from "react-router-dom";
 
 function Categorie() {
-  const location = useLocation();
+  const personnage = useLoaderData();
+
+  const location = useLocation(); // recupere le path
+
+  const [datas, setDatas] = useState([
+    {
+      id: 1,
+      name: "Forêt",
+      url: "https://echappee-celebrement-fantasque.netlify.app/assets/vue-fascinante-foret-par-journee-ensoleillee-montanges-france-DChjSNJQ.jpg",
+    },
+  ]);
+
+  useEffect(() => {
+    fetch(`https://wcs-protojam-goupea.onrender.com/journey`)
+      .then((response) => response.json())
+      .then((data) => setDatas(data.journeys))
+      .catch((error) => console.error(error));
+  }, []);
+
   const categoryName = location.pathname.split("/")[2];
-  const selectedCategory = categories.find(
-    (categorie) => categorie.path === `/categorie/${categoryName}`
+
+  const selectedCategory = personnage.celebrities.find(
+    (categorie) => categorie.path === `./${categoryName}`
   );
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -15,45 +33,43 @@ function Categorie() {
     setCurrentIndex(0);
   }, [selectedCategory]);
 
-  if (!selectedCategory) {
-    return <div>Catégorie non trouvée</div>;
-  }
-
-  const { sousCategorie } = selectedCategory;
-
   const nextSlide = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === sousCategorie.length - 1 ? 0 : prevIndex + 1
+      prevIndex === personnage.celebrities.length - 1 ? 0 : prevIndex + 1
     );
   };
 
   const prevSlide = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? sousCategorie.length - 1 : prevIndex - 1
+      prevIndex === 0 ? personnage.celebrities.length - 1 : prevIndex - 1
     );
   };
+  console.info("test", datas);
+  const stan = [];
 
+  console.info(stan);
   return (
     <div className="container-title">
-      <img
-        className="categorie-img"
-        src={selectedCategory.img}
-        alt={selectedCategory.name}
-      />
-      <h2 className="title-cat">{selectedCategory.name}</h2>
+      {console.info("plop", datas)}
+      <img className="categorie-img" src={datas[0].url} alt={datas[0].name} />
+      <h2 className="title-cat">{datas[0].name}</h2>
       <div className="carousel">
         <div className="carousel-images">
+          {" "}
+          {personnage.celebrities.journey_id === datas.id
+            ? stan.push(personnage.celebrities)
+            : ""}
           <div className="slide active">
             <Link
-              to={`${selectedCategory.path}/${sousCategorie[currentIndex].name}`}
+              to={`./${personnage.celebrities[currentIndex].name}`}
               className="sous-categorie-container"
             >
               <img
                 className="sous-categorie-img"
-                src={sousCategorie[currentIndex].img}
-                alt={sousCategorie[currentIndex].name}
+                src={stan[currentIndex].url}
+                alt={personnage.celebrities[currentIndex].name}
               />
-              <h3>{sousCategorie[currentIndex].name}</h3>
+              <h3>{personnage.celebrities[currentIndex].name}</h3>
             </Link>
           </div>
         </div>
