@@ -1,6 +1,6 @@
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
+import { ApiProvider } from "./context/ApiContext";
 import App from "./App";
 import Accueil from "./pages/Accueil";
 import Sejour from "./pages/Sejour";
@@ -36,7 +36,7 @@ const router = createBrowserRouter([
         element: <Contact />,
       },
       {
-        path: "/categorie/:categoryName",
+        path: "/:categoryName",
         element: <Categorie />,
         loader: perso,
       },
@@ -63,4 +63,8 @@ const router = createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<RouterProvider router={router} />);
+root.render(
+  <ApiProvider>
+    <RouterProvider router={router} />
+  </ApiProvider>
+);

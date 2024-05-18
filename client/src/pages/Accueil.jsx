@@ -17,8 +17,6 @@ function Acceuil() {
       .catch((error) => console.error(error));
   }, []);
 
-  console.info(datas);
-
   const removeAccents = (str) =>
     str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
@@ -28,7 +26,10 @@ function Acceuil() {
       <div className="cards-container">
         {datas.map((categorie) => (
           <Link
-            to={`categorie/${removeAccents(categorie.name.toLowerCase())}`}
+            to={{
+              pathname: `/${removeAccents(categorie.name.toLowerCase())}`,
+              state: { idSend: categorie.id },
+            }}
             className="categorie-container"
             key={categorie.name}
           >
