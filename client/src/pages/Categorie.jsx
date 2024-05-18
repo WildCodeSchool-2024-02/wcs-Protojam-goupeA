@@ -2,14 +2,6 @@ import { useState, useEffect } from "react";
 import { Link, useLocation, useLoaderData } from "react-router-dom";
 import { useApi } from "../context/ApiContext";
 
-function search(tab) {
-  let i = 0;
-  while (tab[i] === "") {
-    i = +1;
-  }
-  return tab[i];
-}
-
 function Categorie() {
   const celebrities = useLoaderData();
   const { datas } = useApi();
@@ -22,12 +14,10 @@ function Categorie() {
   const removeAccents = (str) =>
     str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
-  const idSend = search(
-    datas.map((data) =>
-      removeAccents(data.name.toLowerCase()) === categoryName ? data.id : ""
-    )
+  const idSend = datas.filter((data) =>
+    removeAccents(data.name.toLowerCase()) === categoryName ? data.id : ""
   );
-  console.info(idSend);
+  // console.info(idSend[0].id);
 
   const selectedCategory = celebrities.find(
     (categorie) => categorie.journey_id === datas[0].id
@@ -51,7 +41,7 @@ function Categorie() {
     );
   };
 
-  const idImgCat = idSend - 1;
+  const idImgCat = idSend[0].id - 1;
 
   return (
     <div className="container-title">
@@ -65,11 +55,11 @@ function Categorie() {
         <div className="carousel-images">
           {" "}
           {celebrities.map((tab) =>
-            tab.journey_id === idSend ? test.push(tab) : ""
+            tab.journey_id === idSend[0].id ? test.push(tab) : ""
           )}
           <div className="slide active">
             <Link
-              to={`./${celebrities[currentIndex].name}`}
+              to={`./${test[currentIndex].name}`}
               className="sous-categorie-container"
             >
               {console.info(test)}
@@ -78,7 +68,7 @@ function Categorie() {
                 src={test[currentIndex].url}
                 alt={test[currentIndex].name}
               />
-              <h3>{celebrities[currentIndex].name}</h3>
+              <h3>{test[currentIndex].name}</h3>
             </Link>
           </div>
         </div>
