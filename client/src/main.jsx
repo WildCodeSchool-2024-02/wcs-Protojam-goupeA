@@ -7,7 +7,7 @@ import Sejour from "./pages/Sejour";
 import Reservation from "./pages/Reservation";
 import Contact from "./pages/Contact";
 import Categorie from "./pages/Categorie";
-import Personnages from "./pages/Personnages";
+import Personnages from "./pages/Perso";
 
 const perso = async () => {
   const response = await fetch(
@@ -41,7 +41,7 @@ const router = createBrowserRouter([
         loader: perso,
       },
       {
-        path: "./:persoName",
+        path: "./:categoryName/:persoName",
         element: <Personnages />,
         loader: perso,
       },
