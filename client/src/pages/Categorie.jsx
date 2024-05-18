@@ -2,17 +2,32 @@ import { useState, useEffect } from "react";
 import { Link, useLocation, useLoaderData } from "react-router-dom";
 import { useApi } from "../context/ApiContext";
 
+function search(tab) {
+  let i = 0;
+  while (tab[i] === "") {
+    i = +1;
+  }
+  return tab[i];
+}
+
 function Categorie() {
   const celebrities = useLoaderData();
   const { datas } = useApi();
 
   const location = useLocation(); // recupere le path
+  const categoryName = location.pathname.split("/")[1];
 
   const test = [];
-  /* const idSend = location.state.idSend; */
-  const idSend = 1;
-  const categoryName = location.pathname.split("/")[1];
-  console.info("datas", categoryName);
+
+  const removeAccents = (str) =>
+    str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+  const idSend = search(
+    datas.map((data) =>
+      removeAccents(data.name.toLowerCase()) === categoryName ? data.id : ""
+    )
+  );
+  console.info(idSend);
 
   const selectedCategory = celebrities.find(
     (categorie) => categorie.journey_id === datas[0].id
@@ -36,14 +51,16 @@ function Categorie() {
     );
   };
 
+  const idImgCat = idSend - 1;
+
   return (
     <div className="container-title">
       <img
         className="categorie-img"
-        src={datas[idSend].url}
-        alt={datas[idSend].name}
+        src={datas[idImgCat].url}
+        alt={datas[idImgCat].name}
       />
-      <h2 className="title-cat">{datas[idSend].name}</h2>
+      <h2 className="title-cat">{datas[idImgCat].name}</h2>
       <div className="carousel">
         <div className="carousel-images">
           {" "}
