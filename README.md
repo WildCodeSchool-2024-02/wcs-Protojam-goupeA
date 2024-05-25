@@ -32,8 +32,6 @@ npm run test
 
 👤 **Darras Sacha Pierre Delarocque Matthieu Helbert Alexandre Wenck Fabien LAQUERRIERE **
 
-* Github: [@FabienLqr Halcomberg MatthWCS PierreDelarocque ](https://github.com/FabienLqr Halcomberg MatthWCS PierreDelarocque )
-
 ## 🤝 Contributing
 
 Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/WildCodeSchool/simple-jsphp/issues). You can also take a look at the [contributing guide](https://github.com/WildCodeSchool/simple-jsphp/blob/master/CONTRIBUTING.md).
@@ -47,5 +45,6 @@ Give a ⭐️ if this project helped you!
 Copyright © 2024 [Darras Sacha Pierre Delarocque Matthieu Helbert Alexandre Wenck Fabien LAQUERRIERE ](https://github.com/FabienLqr Halcomberg MatthWCS PierreDelarocque ).<br />
 This project is [MIT](https://github.com/WildCodeSchool/simple-jsphp/blob/master/LICENSE) licensed.
 
-***
+---
+
 _This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
